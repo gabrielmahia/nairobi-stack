@@ -1,5 +1,7 @@
 # Live Data APIs for East Africa Builders
 
+> **mpesa-mcp** — the MCP server that lets AI agents call M-Pesa and Africa's Talking APIs — is now on [Glama MCP Registry](https://glama.ai/mcp/servers/gabrielmahia/mpesa-mcp). Install with `pip install mpesa-mcp`.
+
 The APIs below are **free, keyless, and production-reliable**. All are used across the nairobi-stack app suite. Each entry includes TTL recommendation, graceful fallback pattern, and real usage example.
 
 ---
