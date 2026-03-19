@@ -27,6 +27,9 @@ This guide is built from real integration work across three production systems �
 - [USSD Patterns](guides/ussd-patterns.md) — menus, sessions, Africa's Talking
 - [SMS Infrastructure](guides/sms-infrastructure.md) — Africa's Talking, shortcodes, DLT registration
 
+### Data & Live APIs
+- [Live Data APIs](guides/live-data-apis.md) — 11 free keyless APIs confirmed working in Kenya: Open-Meteo, NDMA, COB, World Bank, WFP/HDX, LSK/FIDA/Judiciary RSS, open.er-api.com, Yahoo Finance
+
 ### Design
 - [Mobile-First UX for Kenya](guides/mobile-first-ux.md) — offline, low-data, feature phone realities
 - [Kiswahili in Your Product](guides/kiswahili-in-products.md) — translation, tone, Sheng, code-switching

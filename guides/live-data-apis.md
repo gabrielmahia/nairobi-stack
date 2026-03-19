@@ -275,3 +275,116 @@ else:
 ---
 
 *Part of the [nairobi-stack](https://github.com/gabrielmahia/nairobi-stack) East Africa engineering guide.*
+
+---
+
+## Safaricom Daraja reachability — sandbox.safaricom.co.ke
+
+**URL:** `https://sandbox.safaricom.co.ke`  
+**Key required:** No (ping only)  
+**Purpose:** Confirm M-Pesa API path is healthy before a user attempts a payment  
+**TTL recommendation:** 1800s (30 minutes)
+
+```python
+@st.cache_data(ttl=1800)
+def check_mpesa_reachable() -> bool:
+    try:
+        req = urllib.request.Request(
+            "https://sandbox.safaricom.co.ke",
+            headers={"User-Agent": "your-app/1.0"},
+        )
+        urllib.request.urlopen(req, timeout=4)
+        return True
+    except Exception:
+        return False
+```
+
+**Use in:** Any app with M-Pesa giving or payments — show warning before user fills in amount if ping fails.  
+**Production note:** Ping the sandbox to test reachability; production Daraja (`api.safaricom.co.ke`) requires a valid OAuth token to reach.
+
+---
+
+## Yahoo Finance — yfinance
+
+**Package:** `yfinance` (pip install yfinance)  
+**Key required:** No  
+**Rate limit:** Unofficial, use responsibly — cache aggressively  
+**TTL recommendation:** 300s (5 minutes) for prices, 3600s for macro indicators
+
+```python
+import yfinance as yf
+
+@st.cache_data(ttl=300)
+def fetch_price(ticker: str) -> dict:
+    try:
+        t = yf.Ticker(ticker)
+        info = t.fast_info
+        return {
+            "price":    round(info.last_price, 2),
+            "currency": info.currency,
+            "live":     True,
+        }
+    except Exception:
+        return {"live": False}
+```
+
+**Kenya-relevant tickers:** `KCB.NR` (KCB Group NSE), `EQTY.NR` (Equity Group), `SCOM.NR` (Safaricom), `^NSEI` (NSE 20 Share Index)  
+**Use in:** Macro risk terminals, investment tools, portfolio dashboards.  
+**Warning:** Not suitable for trading decisions — use official NSE data feeds for production trading systems.
+
+---
+
+## Testing live data functions (without hitting real APIs)
+
+All live data functions should have smoke tests that mock `urllib.request.urlopen`. This lets CI pass without network access and confirms graceful fallback behaviour.
+
+```python
+import unittest.mock as mock
+import json
+
+def test_fetch_kes_rate_fallback():
+    """Returns fallback dict when network fails."""
+    with mock.patch("urllib.request.urlopen", side_effect=Exception("no network")):
+        result = fetch_kes_rate()
+    assert isinstance(result, dict)
+    assert "live" in result
+    assert result["live"] is False
+
+def test_fetch_kes_rate_live():
+    """Parses valid API response correctly."""
+    fake = json.dumps({
+        "rates": {"KES": 129.33, "GBP": 0.75, "EUR": 0.87},
+        "time_last_update_utc": "Wed, 18 Mar 2026 00:00:00 +0000",
+    }).encode()
+    with mock.patch("urllib.request.urlopen") as mu:
+        mu.return_value.__enter__ = lambda s: s
+        mu.return_value.__exit__ = mock.Mock(return_value=False)
+        mu.return_value.read = mock.Mock(return_value=fake)
+        result = fetch_kes_rate()
+    assert result["live"] is True
+    assert result["kes"] == 129.33
+```
+
+**Pattern:** Always test both the success path (mocked valid response) and the failure path (exception raised). The failure test is more important — it confirms your app won't crash when an API is down.
+
+---
+
+## API status summary
+
+| API | Key | Limit | Confirmed working |
+|---|---|---|---|
+| open.er-api.com | No | Fair use | ✓ March 2026 |
+| Open-Meteo | No | None | ✓ March 2026 |
+| ndma.go.ke/feed/ | No | None | ✓ March 2026 |
+| cob.go.ke/feed/ | No | None | ✓ March 2026 |
+| api.worldbank.org | No | None (slow) | ✓ March 2026, timeout=15 |
+| data.humdata.org | No | None | ✓ March 2026 |
+| lsk.or.ke/feed/ | No | None | ✓ March 2026 |
+| fidakenya.org/feed/ | No | None | ✓ March 2026 |
+| judiciary.go.ke/feed/ | No | None | ✓ March 2026 |
+| sandbox.safaricom.co.ke | No | None (ping) | ✓ March 2026 |
+| finance.yahoo.com (yfinance) | No | Unofficial | ✓ March 2026 |
+| Kenya Gazette | N/A | — | ✗ 403 blocked |
+| parliament.go.ke | N/A | — | ✗ 404 |
+| knbs.or.ke | N/A | — | ✗ 503 |
+| mzalendo.com/api | N/A | — | ✗ 404 |
