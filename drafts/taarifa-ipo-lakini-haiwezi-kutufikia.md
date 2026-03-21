@@ -28,23 +28,23 @@ Nimeweka miaka ya mwanzo wa 2026 kujenga zana 13 ambazo zinajibu tatizo hili moj
 
 **Kwa wakulima na mawakala wa NGO**
 
-[JuaMazao](https://mazao-intel.streamlit.app) inaonyesha bei za chakula za WFP kwa wakati halisi — mahindi, mchele, sukari, mafuta ya kupikia — katika masoko ya Kenya. Ikiwa bei ya mahindi imepanda zaidi ya asilimia 20 kuliko wastani wa miezi 12, zana inaonyesha tahadhari. Ikiwa mvua katika eneo lako la kilimo imekuwa chini ya kawaida wiki mbili, inaonyesha ishara ya hatari.
+[JuaMazao](https://juamazao.streamlit.app) inaonyesha bei za chakula za WFP kwa wakati halisi — mahindi, mchele, sukari, mafuta ya kupikia — katika masoko ya Kenya. Ikiwa bei ya mahindi imepanda zaidi ya asilimia 20 kuliko wastani wa miezi 12, zana inaonyesha tahadhari. Ikiwa mvua katika eneo lako la kilimo imekuwa chini ya kawaida wiki mbili, inaonyesha ishara ya hatari.
 
 [WapiMaji](https://wapimaji.streamlit.app) inafuatilia msongo wa maji na ukame katika kaunti zote 47. Inatuma tahadhari kwa SMS — kwenye simu ya kawaida, bila intaneti.
 
 **Kwa raia na viongozi wa jumuiya**
 
-[Macho ya Wananchi](https://civic-decoder.streamlit.app) inaonyesha rekodi ya mahudhurio ya wabunge wa Bunge la 13, hali ya miswada, na matumizi ya CDF kwa kila jimbo.
+[Macho ya Wananchi](https://macho-ya-wananchi.streamlit.app) inaonyesha rekodi ya mahudhurio ya wabunge wa Bunge la 13, hali ya miswada, na matumizi ya CDF kwa kila jimbo.
 
-[Hesabu](https://budget-sentinel.streamlit.app) inaonyesha jinsi kaunti 46 zinavyotumia fedha zao — ni kaunti zipi zinazotumia zaidi ya asilimia 70, na zipi zinazoacha mabilioni bila kutumika.
+[Hesabu](https://hesabu.streamlit.app) inaonyesha jinsi kaunti 46 zinavyotumia fedha zao — ni kaunti zipi zinazotumia zaidi ya asilimia 70, na zipi zinazoacha mabilioni bila kutumika.
 
-[Jibu](https://jibu.streamlit.app) inajibu maswali kuhusu haki za kikatiba, Sheria ya Ajira, na Sheria ya Ardhi — kwa Kiswahili na Kiingereza.
+[Jibu](https://jibuyangu.streamlit.app) inajibu maswali kuhusu haki za kikatiba, Sheria ya Ajira, na Sheria ya Ardhi — kwa Kiswahili na Kiingereza.
 
 **Kwa diaspora**
 
-[TumaPesa](https://remit-lens.streamlit.app) inaonyesha gharama halisi ya kutuma pesa Kenya kupitia njia 7 tofauti — ikiwa ni pamoja na ada iliyofichwa katika kiwango cha ubadilishaji wa sarafu. Benki ya Dunia inasema gharama ya wastani ya kupokea remitance Kenya ni asilimia 5.26. Zana inaonyesha kama mtoa huduma wako yuko chini au juu ya kiwango hicho.
+[TumaPesa](https://tumapesa.streamlit.app) inaonyesha gharama halisi ya kutuma pesa Kenya kupitia njia 7 tofauti — ikiwa ni pamoja na ada iliyofichwa katika kiwango cha ubadilishaji wa sarafu. Benki ya Dunia inasema gharama ya wastani ya kupokea remitance Kenya ni asilimia 5.26. Zana inaonyesha kama mtoa huduma wako yuko chini au juu ya kiwango hicho.
 
-[Hela](https://hela.streamlit.app) inasaidia hazina za chama — vikoba na vikundi vya akiba — kudhibiti michango, mikopo, na malipo ya mzunguko kwa M-Pesa.
+[Hela](https://helaismoney.streamlit.app) inasaidia hazina za chama — vikoba na vikundi vya akiba — kudhibiti michango, mikopo, na malipo ya mzunguko kwa M-Pesa.
 
 ---
 
