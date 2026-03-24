@@ -13,7 +13,7 @@ A practical, opinionated reference for developers — in Kenya, the diaspora, or
 
 Western developer documentation assumes broadband, credit cards, app stores, and English-only users. East African users may have any combination of: feature phones, sporadic 2G, M-Pesa (no bank account), Kiswahili or Sheng as primary language, prepaid data, and screen sizes that haven't been in a Western product review since 2014.
 
-This guide is built from real integration work across three production systems — [Catholic Network Tools](https://github.com/gabrielmahia/catholic-network-tools), [OpenResilience](https://github.com/gabrielmahia/openresilience), and [RemitLens](https://github.com/gabrielmahia/remit-lens) — plus field experience in Nairobi, Mombasa, and across Kenya's 47 counties.
+This guide is built from real integration work across three production systems — [Catholic Network Tools](https://github.com/gabrielmahia/jumuia), [OpenResilience](https://github.com/gabrielmahia/openresilience), and [RemitLens](https://github.com/gabrielmahia/remit-lens) — plus field experience in Nairobi, Mombasa, and across Kenya's 47 counties.
 
 ---
 
