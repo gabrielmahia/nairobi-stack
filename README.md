@@ -51,3 +51,43 @@ This is a living document. If you've built something in East Africa and learned 
 ---
 
 *Maintained by [Gabriel Mahia](https://github.com/gabrielmahia). Kenya × USA.*
+
+## MCP ecosystem updates (2026)
+
+Key developments relevant to East African developers building on mpesa-mcp:
+
+### Tool annotations (spec 2025-03-26)
+
+All MCP tools should declare behavioral hints. For payment/SMS servers this is critical:
+
+```python
+@mcp.tool(annotations={
+    'title': 'M-Pesa STK Push',
+    'readOnlyHint': False,      # modifies state (moves money)
+    'destructiveHint': True,    # irreversible financial operation
+    'idempotentHint': False,    # each call creates a new transaction
+    'openWorldHint': True,      # reaches Safaricom's external API
+})
+def mpesa_stk_push(phone: str, amount: int, ...):
+```
+
+Without these, Claude Desktop and ChatGPT treat all tools as potentially destructive and may add unnecessary friction on read operations.
+
+### Server Cards / .well-known (roadmap Q2 2026)
+
+Servers can advertise capabilities via `.well-known/mcp.json` — a static JSON file at the repo root that registries can index without connecting to your server. Add this to any MCP server you publish.
+
+### MCP accuracy benchmark
+
+CData's 2026 benchmark found MCP servers accurate 60–75% on complex queries. Write operations (payments, SMS) are the highest-risk category — test for:
+- All phone number formats: `0712345678`, `254712345678`, `+254712345678`
+- Boundary amounts (minimum 1 KES, maximum per API limit)
+- Missing optional fields (reference, description)
+
+### Streamlit 1.55.0 (March 2026)
+
+Key changes for East African app builders:
+- `st.metric` now has `delta_description` parameter — add context like "vs last month"
+- `st.tabs` supports `on_change` — dynamic loading of heavy data only when tab is opened
+- `st.image` has `link` parameter — clickable images for maps and charts
+- Widget binding (`bind` parameter) — sync widget state with URL query params for shareable links
