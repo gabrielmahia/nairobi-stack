@@ -91,3 +91,50 @@ Key changes for East African app builders:
 - `st.tabs` supports `on_change` — dynamic loading of heavy data only when tab is opened
 - `st.image` has `link` parameter — clickable images for maps and charts
 - Widget binding (`bind` parameter) — sync widget state with URL query params for shareable links
+
+## AGENTS.md — tell AI coding agents how to work with your repo
+
+[AGENTS.md](https://github.com/aaif/agents.md) is a spec by OpenAI, now part of the
+Agentic AI Foundation (Linux Foundation). It's been adopted by 60,000+ repos and is
+supported by Cursor, GitHub Copilot, Claude Code, Devin, Gemini CLI, and VS Code.
+
+Add it to any repo you want AI coding tools to understand correctly:
+
+```markdown
+# AGENTS.md
+
+## What this is
+[Brief description]
+
+## Architecture
+[Directory structure]
+
+## Critical rules
+[Things agents must not change or break]
+
+## Running locally
+[Commands]
+```
+
+All repos in the gabriel Mahia portfolio now have AGENTS.md files.
+
+## MCP vs A2A — know the difference
+
+Both are 2025-2026 protocol standards under the Linux Foundation:
+
+| | MCP | A2A |
+|---|---|---|
+| What | Agent ↔ Tools | Agent ↔ Agent |
+| Created by | Anthropic | Google |
+| Use case | Connect Claude to M-Pesa | Orchestrate multiple agents |
+| East Africa relevance | mpesa-mcp, WapiMaji SMS | Multi-agent payment workflows |
+
+mpesa-mcp is MCP only. For multi-agent architectures (payment + notification + audit),
+A2A would coordinate the agents while each agent uses MCP to reach its tools.
+
+## MCP Dev Summit — April 2-3 2026, New York
+
+The official MCP community event, now under the Agentic AI Foundation. CFP is open.
+If you're building on MCP for African markets, this is the venue to present.
+
+[events.linuxfoundation.org/mcp-dev-summit-north-america](https://events.linuxfoundation.org/mcp-dev-summit-north-america/)
