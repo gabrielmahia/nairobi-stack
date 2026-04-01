@@ -138,3 +138,31 @@ The official MCP community event, now under the Agentic AI Foundation. CFP is op
 If you're building on MCP for African markets, this is the venue to present.
 
 [events.linuxfoundation.org/mcp-dev-summit-north-america](https://events.linuxfoundation.org/mcp-dev-summit-north-america/)
+
+## Community presence and contributions
+
+### Where to find this work
+
+| Platform | Link | What's there |
+|----------|------|--------------|
+| GitHub | [gabrielmahia](https://github.com/gabrielmahia) | 15 repos, 8+ packages |
+| PyPI | [mpesa-mcp](https://pypi.org/project/mpesa-mcp/) | MCP server for M-Pesa + AT |
+| MCP Registry | [io.github.gabrielmahia/mpesa-mcp](https://registry.modelcontextprotocol.io) | Official listing |
+| Portfolio | [gabrielmahia.github.io](https://gabrielmahia.github.io) | All 13 apps |
+| Engineering blog | [aikungfu.dev](https://aikungfu.dev) | Technical writing |
+
+### Open source contributions
+
+| Org | Issue/PR | What |
+|-----|----------|------|
+| [Gates Foundation / Mojaloop](https://github.com/mojaloop/documentation/issues/553) | #553 | MCP + payment rails integration guide |
+| [OCHA / HDX](https://github.com/OCHA-DAP/data-grid-recipes/issues/194) | #194 | Kenya food security data recipe |
+| [Andrew Ng / context-hub](https://github.com/andrewyng/context-hub/pull/52) | PR #52 | Africa's Talking + M-Pesa docs |
+| [mySociety / theyworkforyou](https://github.com/mysociety/theyworkforyou/issues/1998) | #1998 | Kenya parliamentary data tools |
+| [Code for Africa / openAFRICA](https://github.com/CodeForAfrica/openAFRICA/issues/55) | #55 | Kenya civic tools listing |
+| [Open Knowledge Foundation](https://github.com/okfn/dataportals.org/issues/407) | #407 | Kenya open data portals |
+| [Open Contracting](https://github.com/open-contracting/standard/issues/1745) | #1745 | Kenya procurement transparency |
+| [Ushahidi](https://github.com/ushahidi/platform/issues/5048) | #5048 | Kenya crisis mapping tools |
+| [Open Data Day](https://github.com/okfn/opendataday/issues/425) | #425 | Kenya civic tools showcase |
+| [Africa's Talking SDK](https://github.com/AfricasTalkingLtd/africastalking-python/issues/72) | #72 | mpesa-mcp community project |
+
