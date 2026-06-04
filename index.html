@@ -3,313 +3,440 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The Nairobi Stack — engineering guide for building software in East Africa. M-Pesa, USSD, Africa's Talking, Kenya regulatory landscape.">
-<title>The Nairobi Stack</title>
+<title>The Nairobi Stack — East Africa Developer Reference</title>
+<meta name="description" content="The definitive developer reference for building AI-powered applications on Kenya and East Africa's digital infrastructure. M-PESA, USSD, Africa's Talking, NHIF, KRA, and more.">
+<meta property="og:title" content="The Nairobi Stack">
+<meta property="og:description" content="Build on Kenya's digital infrastructure. 110+ open-source tools, MCP servers, datasets, and APIs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0e1a;--surface:#0f1628;--border:#1e2d4a;
-  --blue:#3b82f6;--amber:#f59e0b;--green:#10b981;
-  --text:#e2e8f0;--muted:#64748b;
-  --mono:'Syne Mono',monospace;--display:'Syne',sans-serif;--serif:'DM Serif Display',serif;
+  --bg:#070c18;--surface:#0c1428;--elevated:#111e38;
+  --border:rgba(255,255,255,0.07);--border-hi:rgba(255,255,255,0.14);
+  --blue:#4a9eff;--amber:#f5a623;--green:#22c55e;--red:#ef4444;
+  --purple:#a78bfa;--cyan:#22d3ee;
+  --text:#e2e8f0;--muted:#64748b;--dim:#3d4d6a;
+  --mono:"Syne Mono",monospace;--display:"Syne",sans-serif;--serif:"DM Serif Display",serif;
+  --r:6px;
 }
-body{background:var(--bg);color:var(--text);font-family:var(--display);
-  background-image:radial-gradient(circle at 20% 50%,rgba(59,130,246,0.04) 0,transparent 60%),
-    radial-gradient(circle at 80% 20%,rgba(245,158,11,0.04) 0,transparent 60%);
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--display);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+/* Grid bg */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(74,158,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(74,158,255,0.03) 1px,transparent 1px);
+  background-size:48px 48px;
 }
-nav{display:flex;align-items:center;justify-content:space-between;
-  padding:1.2rem 2rem;border-bottom:1px solid var(--border);
-  background:rgba(10,14,26,0.9);backdrop-filter:blur(8px);
-  position:sticky;top:0;z-index:10;}
-.nav-logo{font-family:var(--mono);font-size:.85rem;color:var(--blue);letter-spacing:.05em;}
-.nav-links{display:flex;gap:2rem;}
-.nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .15s;}
-.nav-links a:hover{color:var(--text);}
-
-.hero{padding:7rem 2rem 5rem;max-width:1000px;margin:0 auto;text-align:center;}
-.hero-badge{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--blue);margin-bottom:1.5rem;
-  display:inline-flex;align-items:center;gap:.5rem;
-  border:1px solid rgba(59,130,246,.3);padding:.4rem 1rem;border-radius:2rem;}
-.hero-badge::before{content:'●';color:var(--green);animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
-h1{font-family:var(--display);font-weight:800;
-  font-size:clamp(2.5rem,7vw,5rem);line-height:1;letter-spacing:-.03em;
-  margin-bottom:1.5rem;}
-h1 span{color:var(--blue);}
-.hero-desc{font-family:var(--serif);font-style:italic;
-  font-size:1.2rem;color:var(--muted);max-width:600px;margin:0 auto 2.5rem;line-height:1.6;}
-.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  text-decoration:none;padding:.8rem 1.6rem;border:1px solid var(--border);
-  color:var(--text);transition:all .15s;}
-.btn:hover{border-color:var(--blue);color:var(--blue);}
-.btn.solid{background:var(--blue);border-color:var(--blue);color:white;}
-.btn.solid:hover{background:#2563eb;border-color:#2563eb;}
-
-section{max-width:1000px;margin:0 auto;padding:5rem 2rem;}
-.section-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--blue);margin-bottom:.75rem;}
-h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);
-  letter-spacing:-.02em;margin-bottom:3rem;line-height:1.1;}
-.rule{border:none;border-top:1px solid var(--border);max-width:1000px;margin:0 auto;}
-
-/* Guide cards */
-.guides{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;
-  background:var(--border);border:1px solid var(--border);}
-.guide-card{background:var(--surface);padding:1.8rem;transition:background .15s;
-  text-decoration:none;color:inherit;display:block;}
-.guide-card:hover{background:rgba(59,130,246,.06);}
-.guide-icon{font-size:1.5rem;margin-bottom:.75rem;}
-.guide-title{font-weight:700;font-size:1rem;margin-bottom:.4rem;line-height:1.25;}
-.guide-desc{font-size:.83rem;color:var(--muted);line-height:1.55;}
-
-/* Ecosystem */
-.ecosystem{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:2rem;}
-.eco-card{border:1px solid var(--border);padding:1.2rem;transition:border-color .15s;}
-.eco-card:hover{border-color:var(--blue);}
-.eco-name{font-family:var(--mono);font-size:.8rem;color:var(--blue);margin-bottom:.4rem;}
-.eco-desc{font-size:.8rem;color:var(--muted);line-height:1.5;}
-.eco-badge{display:inline-block;font-family:var(--mono);font-size:.6rem;
-  letter-spacing:.08em;text-transform:uppercase;margin-top:.6rem;
-  padding:2px 6px;border-radius:3px;}
-.eco-badge.live{background:rgba(16,185,129,.15);color:var(--green);}
-.eco-badge.pkg{background:rgba(59,130,246,.15);color:var(--blue);}
-.eco-badge.guide{background:rgba(245,158,11,.15);color:var(--amber);}
-
-/* Why section */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
-.why-text{font-size:1rem;color:var(--muted);line-height:1.7;}
-.why-text p+p{margin-top:1rem;}
-.stat-row{display:flex;flex-direction:column;gap:.5rem;}
-.stat-item{display:flex;align-items:baseline;gap:1rem;
-  padding:.75rem 0;border-bottom:1px solid var(--border);}
-.stat-n{font-family:var(--mono);font-size:2rem;font-weight:600;color:var(--blue);}
-.stat-l{font-size:.82rem;color:var(--muted);}
-
-footer{border-top:1px solid var(--border);padding:2rem;text-align:center;
-  font-family:var(--mono);font-size:.65rem;color:var(--muted);}
-
+/* Nav */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 40px;border-bottom:1px solid var(--border);
+  background:rgba(7,12,24,0.92);backdrop-filter:blur(12px);
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-text{font-family:var(--mono);font-size:.85rem;color:var(--blue);letter-spacing:.04em}
+.nav-badge{font-family:var(--mono);font-size:.6rem;background:rgba(34,197,94,.1);color:var(--green);
+  border:1px solid rgba(34,197,94,.2);padding:2px 8px;border-radius:99px;letter-spacing:.06em}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--blue);color:#fff;padding:8px 16px;border-radius:var(--r);transition:all .15s}
+.nav-cta:hover{background:#2563eb}
+/* Hero */
+.hero{padding:100px 40px 64px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.eyebrow-line{width:32px;height:1px;background:var(--amber)}
+.eyebrow-text{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,6vw,5.2rem);
+  line-height:1;letter-spacing:-.02em;margin-bottom:24px}
+h1 .accent{color:var(--blue)}h1 .accent2{color:var(--amber)}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--muted);
+  max-width:680px;line-height:1.7;margin-bottom:48px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px}
+.tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;
+  border:1px solid var(--border);color:var(--muted);padding:4px 12px;border-radius:99px;
+  transition:all .2s;cursor:default}
+.tag:hover{border-color:var(--blue);color:var(--blue)}
+.tag.green{border-color:rgba(34,197,94,.2);color:var(--green)}
+.tag.amber{border-color:rgba(245,166,35,.2);color:var(--amber)}
+.tag.purple{border-color:rgba(167,139,250,.2);color:var(--purple)}
+/* Stats bar */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;margin-bottom:64px}
+.stat-item{padding:24px 20px;border-right:1px solid var(--border);background:var(--surface)}
+.stat-item:last-child{border-right:none}
+.stat-n{font-family:var(--mono);font-size:1.8rem;font-weight:500;color:var(--blue);line-height:1}
+.stat-l{font-size:.72rem;color:var(--muted);margin-top:4px;letter-spacing:.04em}
+/* Section headers */
+.sec-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-label::before{content:"";display:block;width:20px;height:1px;background:var(--muted)}
+h2{font-family:var(--display);font-weight:700;font-size:1.8rem;margin-bottom:8px}
+.sec-desc{color:var(--muted);font-size:.9rem;margin-bottom:32px;max-width:600px}
+section{padding:64px 40px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+/* MCP table */
+.mcp-grid{display:grid;gap:12px}
+.mcp-card{display:grid;grid-template-columns:200px 1fr auto;align-items:center;gap:16px;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  padding:16px 20px;transition:all .2s}
+.mcp-card:hover{border-color:var(--border-hi);background:var(--elevated)}
+.mcp-name{font-family:var(--mono);font-size:.82rem;color:var(--blue)}
+.mcp-name a{color:var(--blue)}
+.mcp-name a:hover{text-decoration:underline}
+.mcp-desc{font-size:.84rem;color:var(--muted);line-height:1.5}
+.mcp-badges{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.badge{font-family:var(--mono);font-size:.6rem;padding:2px 8px;border-radius:99px;
+  border:1px solid;white-space:nowrap}
+.badge-live{color:var(--green);border-color:rgba(34,197,94,.25);background:rgba(34,197,94,.06)}
+.badge-pypi{color:var(--blue);border-color:rgba(74,158,255,.25);background:rgba(74,158,255,.06)}
+.badge-mit{color:var(--amber);border-color:rgba(245,166,35,.25);background:rgba(245,166,35,.06)}
+/* API Reference */
+.api-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.api-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  padding:24px;transition:border-color .2s}
+.api-card:hover{border-color:var(--border-hi)}
+.api-name{font-family:var(--mono);font-size:.88rem;color:var(--cyan);margin-bottom:6px}
+.api-org{font-size:.72rem;color:var(--muted);margin-bottom:10px;font-family:var(--mono)}
+.api-desc{font-size:.83rem;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.api-endpoint{font-family:var(--mono);font-size:.7rem;background:var(--bg);
+  border:1px solid var(--border);padding:6px 10px;border-radius:4px;color:var(--dim);
+  word-break:break-all}
+/* Tool directory */
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tool-row{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  padding:14px 16px;transition:all .2s;display:flex;flex-direction:column;gap:6px}
+.tool-row:hover{border-color:var(--border-hi);transform:translateY(-1px)}
+.tool-icon-name{display:flex;align-items:center;gap:8px}
+.tool-icon{font-size:1.2rem}
+.tool-name{font-family:var(--mono);font-size:.78rem;color:var(--text)}
+.tool-name a:hover{color:var(--blue)}
+.tool-desc{font-size:.75rem;color:var(--muted);line-height:1.5}
+.tool-chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-family:var(--mono);font-size:.6rem;background:rgba(255,255,255,.04);
+  border:1px solid var(--border);color:var(--muted);padding:2px 7px;border-radius:99px}
+/* Code blocks */
+.code-block{background:#080d1a;border:1px solid var(--border);border-radius:var(--r);
+  padding:20px 24px;font-family:var(--mono);font-size:.78rem;line-height:1.8;
+  color:#94a3b8;overflow-x:auto;margin:16px 0}
+.code-block .c{color:var(--muted)}
+.code-block .k{color:var(--purple)}
+.code-block .s{color:var(--green)}
+.code-block .fn{color:var(--blue)}
+.code-block .co{color:#4a5568}
+/* HuggingFace datasets */
+.ds-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.ds-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.ds-title{font-family:var(--mono);font-size:.88rem;color:var(--amber);margin-bottom:4px}
+.ds-meta{font-size:.72rem;color:var(--muted);font-family:var(--mono);margin-bottom:10px}
+.ds-desc{font-size:.83rem;color:var(--muted);line-height:1.6}
+/* Quickstart */
+.qs-steps{display:grid;gap:12px}
+.qs-step{display:grid;grid-template-columns:32px 1fr;gap:16px;align-items:start}
+.step-n{font-family:var(--mono);font-size:.72rem;color:var(--blue);background:rgba(74,158,255,.1);
+  border:1px solid rgba(74,158,255,.2);width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px}
+.step-body{}
+.step-title{font-weight:600;font-size:.88rem;margin-bottom:4px}
+.step-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
+/* Full-width band */
+.band{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:64px 40px;position:relative;z-index:1}
+.band-inner{max-width:1100px;margin:0 auto}
+/* Footer */
+footer{border-top:1px solid var(--border);padding:32px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--mono);font-size:.7rem;color:var(--muted);
+  position:relative;z-index:1}
+footer a:hover{color:var(--blue)}
+.foot-links{display:flex;gap:24px}
+/* Responsive */
 @media(max-width:768px){
-  nav{padding:.75rem 1rem;}
-  .nav-links{gap:1rem;}
-  .why-grid{grid-template-columns:1fr;}
-  .cta-row{flex-direction:column;align-items:center;}
+  nav{padding:12px 20px}.nav-links{display:none}
+  .hero{padding:60px 20px 40px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .api-grid,.tools-grid,.ds-grid{grid-template-columns:1fr}
+  .mcp-card{grid-template-columns:1fr;gap:8px}
+  .mcp-badges{justify-content:flex-start}
+  section{padding:48px 20px}
+  footer{flex-direction:column;gap:16px;text-align:center}
 }
 </style>
 </head>
 <body>
-
 <nav>
-  <div class="nav-logo">// nairobi-stack</div>
-  <div class="nav-links">
-    <a href="#guides">Guides</a>
-    <a href="#ecosystem">Ecosystem</a>
-    <a href="#why">Why</a>
-    <a href="https://github.com/gabrielmahia/nairobi-stack" target="_blank" rel="noopener">GitHub</a>
+  <div class="nav-logo">
+    <div class="nav-logo-text">nairobi-stack</div>
+    <div class="nav-badge">v2.0 · 2026</div>
   </div>
+  <div class="nav-links">
+    <a href="#mcp">MCP Servers</a>
+    <a href="#apis">APIs</a>
+    <a href="#tools">Tools</a>
+    <a href="#datasets">Datasets</a>
+    <a href="#quickstart">Quickstart</a>
+  </div>
+  <a href="https://github.com/gabrielmahia/nairobi-stack" class="nav-cta" target="_blank">GitHub ↗</a>
 </nav>
 
 <div class="hero">
-  <div class="hero-badge">East Africa · Developer Infrastructure</div>
-  <h1>The <span>Nairobi</span><br>Stack</h1>
-  <p class="hero-desc">
-    The engineering guide for building software products in East Africa —
-    M-Pesa, USSD, Africa's Talking, regulatory landscape, mobile-first UX.
+  <div class="hero-eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text">Developer Reference · East Africa</div>
+  </div>
+  <h1>The <span class="accent">Nairobi</span><br><span class="accent2">Stack</span></h1>
+  <p class="hero-sub">The definitive engineering reference for building AI-powered applications on Kenya and East Africa's digital infrastructure. MCP servers, APIs, open-source tools, NLP datasets — everything you need to ship.</p>
+
+  <div class="hero-tags">
+    <span class="tag green">M-PESA · Daraja API</span>
+    <span class="tag">USSD · Africa's Talking</span>
+    <span class="tag amber">MCP · A2A · ADK</span>
+    <span class="tag">KRA eTims</span>
+    <span class="tag">NHIF / SHA</span>
+    <span class="tag purple">Swahili NLP</span>
+    <span class="tag">KHIS / DHIS2</span>
+    <span class="tag">eCitizen API</span>
+    <span class="tag">Kenya Legal Corpus</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat-item"><div class="stat-n">110+</div><div class="stat-l">Open Source Tools</div></div>
+    <div class="stat-item"><div class="stat-n">4</div><div class="stat-l">MCP Servers</div></div>
+    <div class="stat-item"><div class="stat-n">4</div><div class="stat-l">HF Datasets</div></div>
+    <div class="stat-item"><div class="stat-n">3</div><div class="stat-l">AI Protocols</div></div>
+    <div class="stat-item"><div class="stat-n">47M</div><div class="stat-l">Swahili Speakers</div></div>
+  </div>
+</div>
+
+<!-- MCP SERVERS -->
+<section id="mcp">
+  <div class="sec-label">Model Context Protocol</div>
+  <h2>MCP Servers</h2>
+  <p class="sec-desc">Plug East Africa's digital infrastructure directly into Claude, GPT-4, or Gemini. No custom API code required.</p>
+
+  <div class="mcp-grid">
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/mpesa-mcp" target="_blank">mpesa-mcp</a></div>
+      <div class="mcp-desc">M-PESA Daraja API as MCP tools — STK push, B2C payments, balance queries, transaction status, C2B URL registration. First African mobile money MCP server.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install mpesa-mcp</span>
+        <span class="badge badge-live">400+ downloads</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/wapimaji-mcp" target="_blank">wapimaji-mcp</a></div>
+      <div class="mcp-desc">Kenya water infrastructure data as MCP tools — borehole registry, Water Services Regulatory Board data, county water access statistics.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-live">Live</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/swahili-health-mcp" target="_blank">swahili-health-mcp</a></div>
+      <div class="mcp-desc">Kenya DHIS2 / KHIS health data as MCP tools — facility search, maternal health indicators, immunization coverage. Swahili-native tool descriptions.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-live">Live</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/kenya-legal-rag" target="_blank">kenya-legal-rag</a></div>
+      <div class="mcp-desc">RAG over Kenya Constitution, Employment Act, Land Act, Companies Act, Data Protection Act. Query Kenya's legal corpus in English or Swahili via MCP.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-live">MCP Compatible</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-block" style="margin-top:24px">
+    <span class="co"># Install all Kenya MCP servers via hub</span><br>
+    <span class="k">pip install</span> kenya-mcp-hub<br><br>
+    <span class="co"># Add to Claude Code</span><br>
+    <span class="k">claude mcp add</span> mpesa <span class="s">--</span> mpesa-mcp<br>
+    <span class="k">claude mcp add</span> water <span class="s">--</span> wapimaji-mcp<br>
+    <span class="k">claude mcp add</span> health <span class="s">--</span> swahili-health-mcp
+  </div>
+</section>
+
+<!-- KENYA APIs -->
+<div class="band" id="apis">
+  <div class="band-inner">
+    <div class="sec-label">Public APIs & Data</div>
+    <h2>Kenya API Reference</h2>
+    <p class="sec-desc">Every public API and data source you need, with endpoint references and usage notes.</p>
+
+    <div class="api-grid">
+      <div class="api-card">
+        <div class="api-name">M-PESA Daraja API</div>
+        <div class="api-org">Safaricom · OAuth 2.0</div>
+        <div class="api-desc">Core Kenya payment infrastructure. STK push, C2B, B2C, account balance, transaction status. 35M+ registered users. Sandbox available at no cost.</div>
+        <div class="api-endpoint">https://sandbox.safaricom.co.ke/oauth/v1/generate</div>
+      </div>
+      <div class="api-card">
+        <div class="api-name">Africa's Talking SMS/USSD</div>
+        <div class="api-org">Africa's Talking · API Key</div>
+        <div class="api-desc">SMS delivery to 300+ carriers, USSD session management, voice calls, airtime topup. Essential for reaching feature-phone users. Kenya, Uganda, Tanzania, Nigeria.</div>
+        <div class="api-endpoint">https://api.africastalking.com/version1/messaging</div>
+      </div>
+      <div class="api-card">
+        <div class="api-name">KRA eTims API</div>
+        <div class="api-org">Kenya Revenue Authority · PIN Auth</div>
+        <div class="api-desc">Electronic Tax Invoice Management System. Invoice submission, VSCU integration, trader details lookup. Required for VAT-registered businesses as of 2024.</div>
+        <div class="api-endpoint">https://etims.kra.go.ke/etims-api</div>
+      </div>
+      <div class="api-card">
+        <div class="api-name">Kenya KHIS / DHIS2</div>
+        <div class="api-org">Ministry of Health · Public</div>
+        <div class="api-desc">Kenya Health Information System — 8,700+ health facilities, disease surveillance, maternal health indicators, immunization coverage. Full DHIS2 analytics API.</div>
+        <div class="api-endpoint">https://hiskenya.org/api/analytics</div>
+      </div>
+      <div class="api-card">
+        <div class="api-name">Kenya Open Data</div>
+        <div class="api-org">Government of Kenya · Open</div>
+        <div class="api-desc">Datasets across agriculture, health, education, census, budget allocations. County-level data via devolution. Updated quarterly.</div>
+        <div class="api-endpoint">https://opendata.go.ke/api/views</div>
+      </div>
+      <div class="api-card">
+        <div class="api-name">Kenya Meteorological Dept</div>
+        <div class="api-org">KMD · Request Access</div>
+        <div class="api-desc">Weather forecasts, rainfall data, climate normals. Essential for agricultural AI, flood monitoring, and energy applications. County-level granularity.</div>
+        <div class="api-endpoint">https://api.meteo.go.ke/v1/forecast</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLS DIRECTORY -->
+<section id="tools">
+  <div class="sec-label">Complete Tool Directory</div>
+  <h2>110+ Deployed Tools</h2>
+  <p class="sec-desc">Every tool is open-source, tested, and deployable today. All Streamlit apps run on the free tier.</p>
+
+  <div class="tools-grid">
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">💰</span><span class="tool-name"><a href="https://github.com/gabrielmahia/daraja-ai" target="_blank">daraja-ai</a></span></div><div class="tool-desc">M-PESA transaction intelligence, fraud signals, paybill lookup</div><div class="tool-chips"><span class="chip">Streamlit</span><span class="chip">Gemini</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🏪</span><span class="tool-name"><a href="https://github.com/gabrielmahia/biashara-ai" target="_blank">biashara-ai</a></span></div><div class="tool-desc">Kenya business formalization: KRA, permits, NHIF, NSSF step-by-step</div><div class="tool-chips"><span class="chip">Streamlit</span><span class="chip">Swahili</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">📈</span><span class="tool-name"><a href="https://github.com/gabrielmahia/mali-ai" target="_blank">mali-ai</a></span></div><div class="tool-desc">NSE, SACCOs, Treasury bonds — wealth building education in Swahili</div><div class="tool-chips"><span class="chip">Streamlit</span><span class="chip">NSE</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">💊</span><span class="tool-name"><a href="https://github.com/gabrielmahia/dawa-ai" target="_blank">dawa-ai</a></span></div><div class="tool-desc">Medicine info, drug interactions, generic alternatives in Swahili</div><div class="tool-chips"><span class="chip">KMPDB</span><span class="chip">Safety</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🌾</span><span class="tool-name"><a href="https://github.com/gabrielmahia/shamba-ai" target="_blank">shamba-ai</a></span></div><div class="tool-desc">Crop disease diagnosis, market prices, weather — for 8M+ farmers</div><div class="tool-chips"><span class="chip">KALRO</span><span class="chip">WFP</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">⚖️</span><span class="tool-name"><a href="https://github.com/gabrielmahia/kenya-legal-rag" target="_blank">kenya-legal-rag</a></span></div><div class="tool-desc">Constitution, Employment Act, Land Act RAG in English/Swahili</div><div class="tool-chips"><span class="chip">RAG</span><span class="chip">MCP</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">📄</span><span class="tool-name"><a href="https://github.com/gabrielmahia/hati-ai" target="_blank">hati-ai</a></span></div><div class="tool-desc">Upload any Kenya gov document → plain Swahili explanation</div><div class="tool-chips"><span class="chip">Vision</span><span class="chip">PDF</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">📋</span><span class="tool-name"><a href="https://github.com/gabrielmahia/bajeti-ai" target="_blank">bajeti-ai</a></span></div><div class="tool-desc">County budget tracker — allocation vs spending with AI analysis</div><div class="tool-chips"><span class="chip">Transparency</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">📚</span><span class="tool-name"><a href="https://github.com/gabrielmahia/shule-ai" target="_blank">shule-ai</a></span></div><div class="tool-desc">KCSE curriculum tutoring in Swahili for 4M+ secondary students</div><div class="tool-chips"><span class="chip">KNEC</span><span class="chip">Education</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🌍</span><span class="tool-name"><a href="https://github.com/gabrielmahia/tafsiri-ai" target="_blank">tafsiri-ai</a></span></div><div class="tool-desc">Swahili ↔ English, Kikuyu, Dholuo, Kamba — domain-aware translation</div><div class="tool-chips"><span class="chip">NLP</span><span class="chip">6 langs</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🧠</span><span class="tool-name"><a href="https://github.com/gabrielmahia/afua-ai" target="_blank">afua-ai</a></span></div><div class="tool-desc">Mental health support, counseling resources, crisis line integration</div><div class="tool-chips"><span class="chip">Crisis: 0800 723 253</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">💼</span><span class="tool-name"><a href="https://github.com/gabrielmahia/ajira-ai" target="_blank">ajira-ai</a></span></div><div class="tool-desc">Youth employment: CV builder, interview prep, gig economy guide</div><div class="tool-chips"><span class="chip">Fuzu</span><span class="chip">BM</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🔨</span><span class="tool-name"><a href="https://github.com/gabrielmahia/jua-kali-ai" target="_blank">jua-kali-ai</a></span></div><div class="tool-desc">Informal sector AI — KIE registration, NITA certification, cooperatives</div><div class="tool-chips"><span class="chip">KIE</span><span class="chip">3M workers</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">📦</span><span class="tool-name"><a href="https://github.com/gabrielmahia/mzigo-ai" target="_blank">mzigo-ai</a></span></div><div class="tool-desc">Import/export: KRA customs duty, EAC trade, KEBS standards</div><div class="tool-chips"><span class="chip">KRA</span><span class="chip">COMESA</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🌍</span><span class="tool-name"><a href="https://github.com/gabrielmahia/wakimbizi-ai" target="_blank">wakimbizi-ai</a></span></div><div class="tool-desc">UNHCR registration, refugee rights, humanitarian services Kenya</div><div class="tool-chips"><span class="chip">UNHCR</span><span class="chip">560k refugees</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🆘</span><span class="tool-name"><a href="https://github.com/gabrielmahia/dharura-ai" target="_blank">dharura-ai</a></span></div><div class="tool-desc">Emergency response, disaster preparedness, first aid — NDMA data</div><div class="tool-chips"><span class="chip">NDMA</span><span class="chip">RedCross</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🔌</span><span class="tool-name"><a href="https://github.com/gabrielmahia/kenya-mcp-hub" target="_blank">kenya-mcp-hub</a></span></div><div class="tool-desc">CLI registry for all Kenya MCP servers — pip install &amp; connect in one command</div><div class="tool-chips"><span class="chip">CLI</span><span class="chip">Registry</span></div></div>
+    <div class="tool-row"><div class="tool-icon-name"><span class="tool-icon">🤖</span><span class="tool-name"><a href="https://github.com/gabrielmahia/civic-agent-kit" target="_blank">civic-agent-kit</a></span></div><div class="tool-desc">Building blocks for civic AI agents — data connectors, prompt templates, evaluation</div><div class="tool-chips"><span class="chip">Agents</span><span class="chip">LlamaIndex</span></div></div>
+  </div>
+  <p style="text-align:center;margin-top:24px;font-family:var(--mono);font-size:.75rem;color:var(--muted)">
+    → <a href="https://github.com/gabrielmahia" style="color:var(--blue)" target="_blank">Browse all 110+ repositories on GitHub</a>
   </p>
-  <div class="cta-row">
-    <a href="#guides" class="btn solid">Read the guides</a>
-    <a href="https://github.com/gabrielmahia/nairobi-stack" class="btn" target="_blank" rel="noopener">GitHub →</a>
-  </div>
-</div>
-
-<hr class="rule">
-
-<section id="guides">
-  <div class="section-label">Engineering guides</div>
-  <h2>Everything you weren't<br>told at the workshop.</h2>
-  <div class="guides">
-    <a href="https://github.com/gabrielmahia/nairobi-stack/blob/main/guides/mpesa-integration.md" class="guide-card" target="_blank" rel="noopener">
-      <div class="guide-icon">📱</div>
-      <div class="guide-title">M-Pesa Integration</div>
-      <div class="guide-desc">Daraja v3 STK Push, C2B, B2C, webhooks. Sandbox to production. Common failure modes and how to handle them.</div>
-    </a>
-    <a href="https://github.com/gabrielmahia/nairobi-stack/blob/main/guides/ussd-patterns.md" class="guide-card" target="_blank" rel="noopener">
-      <div class="guide-icon">📟</div>
-      <div class="guide-title">USSD Patterns</div>
-      <div class="guide-desc">Building for *384#. Session management, menu design, Africa's Talking USSD vs. aggregator USSD. Serving users without smartphones.</div>
-    </a>
-    <a href="https://github.com/gabrielmahia/nairobi-stack/blob/main/guides/sms-infrastructure.md" class="guide-card" target="_blank" rel="noopener">
-      <div class="guide-icon">💬</div>
-      <div class="guide-title">SMS Infrastructure</div>
-      <div class="guide-desc">Africa's Talking SMS at scale. Shortcodes, sender IDs, delivery receipts, bilingual templates, basic phone considerations.</div>
-    </a>
-    <a href="https://github.com/gabrielmahia/nairobi-stack/blob/main/guides/regulatory-landscape.md" class="guide-card" target="_blank" rel="noopener">
-      <div class="guide-icon">⚖️</div>
-      <div class="guide-title">Regulatory Landscape</div>
-      <div class="guide-desc">CBK, CA, CAK, ODPC. What you need to know before you deploy a fintech or communications product in Kenya.</div>
-    </a>
-    <a href="https://github.com/gabrielmahia/nairobi-stack/blob/main/guides/mobile-first-ux.md" class="guide-card" target="_blank" rel="noopener">
-      <div class="guide-icon">🖐️</div>
-      <div class="guide-title">Mobile-First UX</div>
-      <div class="guide-desc">Designing for Kenya's device reality. 44px tap targets, 16px body font, single-column, low-bandwidth. What "mobile-first" actually means here.</div>
-    </a>
-    <a href="https://github.com/gabrielmahia/nairobi-stack/blob/main/guides/chama-digitisation.md" class="guide-card" target="_blank" rel="noopener">
-      <div class="guide-icon">🤝</div>
-      <div class="guide-title">Chama Digitisation</div>
-      <div class="guide-desc">The technical architecture of Kenya's rotating savings groups. M-Pesa integration, member management, loan tracking, trust models.</div>
-    </a>
-  </div>
 </section>
 
-<hr class="rule">
-
-<section id="ecosystem">
-  <div class="section-label">The ecosystem</div>
-  <h2>Tools that use<br>the stack.</h2>
-  <div class="ecosystem">
-    <div class="eco-card">
-      <div class="eco-name">mpesa-mcp</div>
-      <div class="eco-desc">MCP server for M-Pesa Daraja & Africa's Talking. STK Push, SMS, airtime for AI agents.</div>
-      <span class="eco-badge pkg">Python package</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">mpesa-python</div>
-      <div class="eco-desc">Production Python SDK for Safaricom Daraja v3. Zero magic, full type coverage.</div>
-      <span class="eco-badge pkg">Python package</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">kenya-sms</div>
-      <div class="eco-desc">Africa's Talking SMS wrapper. Bilingual EN/SW templates, delivery receipts.</div>
-      <span class="eco-badge pkg">Python package</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">daraja-mock</div>
-      <div class="eco-desc">Local M-Pesa test server. No sandbox registration required.</div>
-      <span class="eco-badge pkg">Python package</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">WapiMaji</div>
-      <div class="eco-desc">Water stress alerts to Kenyan farmers via SMS. Africa's Talking integration.</div>
-      <span class="eco-badge live">Live app</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">Hela</div>
-      <div class="eco-desc">Chama manager with M-Pesa receipt tracking and Google Sheets persistence.</div>
-      <span class="eco-badge live">Live app</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">Jumuia</div>
-      <div class="eco-desc">Parish platform with M-Pesa giving and USSD access for basic phones.</div>
-      <span class="eco-badge live">Live app</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">chama-api</div>
-      <div class="eco-desc">FastAPI REST service for chama management. CRUD endpoints, in-memory + Supabase backends.</div>
-      <span class="eco-badge pkg">REST API</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">Jibu</div>
-      <div class="eco-desc">Civic rights AI in English and Kiswahili. Grounded in Constitution 2010, Employment Act, Land Act 2012.</div>
-      <span class="eco-badge live">Live app</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">
-<div class="ecosystem-card">
-  <strong>AfyaAI</strong>
-  <span>Kenya maternal health and NHIF/SHA navigation. Gemini-powered.</span>
-  <span class="tag">Live app</span>
-</div>
-<div class="ecosystem-card">
-  <strong>SaccoAI</strong>
-  <span>AI-powered chama management — merry-go-round, table banking, M-Pesa commands.</span>
-  <span class="tag">Live app</span>
-</div>
-<div class="ecosystem-card">
-  <strong>TaarifaAI</strong>
-  <span>Investigative journalism toolkit — fact-checker, procurement analyser, Hansard, bilingual.</span>
-  <span class="tag">Live app</span>
-</div>
-<div class="ecosystem-card">
-  <strong>kenya-agui</strong>
-  <span>First East African AG-UI protocol — real-time agent streaming, generative UI, human-in-loop.</span>
-  <span class="tag">Protocol</span>
-</div>
-<div class="ecosystem-card">
-  <strong>east-africa-prompt-library</strong>
-  <span>90+ structured AI prompts for East African civic tech, fintech, health, journalism.</span>
-  <span class="tag">Open source</span>
-</div>
-
-<!-- Mafuriko --></div>
-      <div class="eco-desc">Urban flood intelligence. Incident maps, policy enforcement gaps, action briefs for county governments.</div>
-      <span class="eco-badge live">Live app</span>
-    </div>
-    <div class="eco-card">
-      <div class="eco-name">Hesabu</div>
-      <div class="eco-desc">County budget absorption tracker. Controller of Budget FY2022/23. Identifies unspent development funds.</div>
-      <span class="eco-badge live">Live app</span>
+<!-- DATASETS -->
+<div class="band" id="datasets">
+  <div class="band-inner">
+    <div class="sec-label">HuggingFace Datasets</div>
+    <h2>Swahili NLP Datasets</h2>
+    <p class="sec-desc">Open training data for East African language AI. All datasets are CC BY 4.0.</p>
+    <div class="ds-grid">
+      <div class="ds-card">
+        <div class="ds-title"><a href="https://huggingface.co/datasets/gmahia/swahili-civic-nlp" target="_blank" style="color:var(--amber)">swahili-civic-nlp</a></div>
+        <div class="ds-meta">gmahia · CC BY 4.0 · Swahili/English</div>
+        <div class="ds-desc">Annotated Swahili civic sentences covering government services, constitutional rights, M-PESA financial terms, and county administration. The foundational dataset for Kenya civic AI.</div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-title"><a href="https://huggingface.co/datasets/gmahia/kenya-civic-data" target="_blank" style="color:var(--amber)">kenya-civic-data</a></div>
+        <div class="ds-meta">gmahia · CC BY 4.0 · English/Swahili</div>
+        <div class="ds-desc">Kenya county government data, budget allocations, public service metrics. Structured for NLP tasks: NER, relation extraction, and question answering on civic content.</div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-title"><a href="https://huggingface.co/datasets/gmahia/kenya-agricultural-qa" target="_blank" style="color:var(--amber)">kenya-agricultural-qa</a></div>
+        <div class="ds-meta">gmahia · CC BY 4.0 · Swahili/English</div>
+        <div class="ds-desc">Q&amp;A pairs for Kenya agricultural advisory — crop diseases (MSV, FAW), market prices, planting calendars, livestock health. Grounded in KALRO/KEPHIS data.</div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-title"><a href="https://huggingface.co/datasets/gmahia/kenya-legal-nlp" target="_blank" style="color:var(--amber)">kenya-legal-nlp</a></div>
+        <div class="ds-meta">gmahia · CC BY 4.0 · Swahili/English</div>
+        <div class="ds-desc">Annotated Kenya legal documents (Constitution, Employment Act, Land Act) with NER labels (PERSON, ORG, LAW, DATE) and QA pairs for legal information retrieval tasks.</div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<hr class="rule">
+<!-- QUICKSTART -->
+<section id="quickstart">
+  <div class="sec-label">Get Building</div>
+  <h2>Quickstart</h2>
+  <p class="sec-desc">From zero to a working East African AI application in under 10 minutes.</p>
 
-<section id="why">
-  <div class="section-label">Why this exists</div>
-  <h2>The missing<br>documentation.</h2>
-  <div class="why-grid">
-    <div class="why-text">
-      <p>
-        Safaricom has documentation. Africa's Talking has documentation. 
-        The CA has documentation. But nobody has the documentation 
-        for what happens when you try to use all of them together
-        in a real product serving real Kenyans on real phones.
-      </p>
-      <p>
-        The Nairobi Stack is built from the gaps — the things you only
-        learn after a production incident, a CA letter, or a support ticket
-        that says "your USSD session expired after 30 seconds."
-      </p>
-      <p>
-        It is companion documentation to a portfolio of 29 deployed tools
-        built by a Kenyan diaspora engineer who was tired of re-solving
-        the same infrastructure problems.
-      </p>
-      <p style="margin-top:1.5rem">
-        <a href="https://gabrielmahia.github.io" style="color:var(--blue)">gabrielmahia.github.io →</a>
-      </p>
-      <p style="margin-top:1rem">
-        <a href="https://jibu.streamlit.app" style="color:var(--blue)">Jibu — Know Your Rights Kenya →</a>
-      </p>
+  <div class="qs-steps">
+    <div class="qs-step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <div class="step-title">Install mpesa-mcp</div>
+        <div class="step-desc">The fastest way to start building on Kenya's financial infrastructure.</div>
+        <div class="code-block"><span class="k">pip install</span> mpesa-mcp<br><span class="k">claude mcp add</span> mpesa <span class="s">--</span> mpesa-mcp</div>
+      </div>
     </div>
-    <div class="stat-row">
-      <div class="stat-item">
-        <span class="stat-n">29</span>
-        <span class="stat-l">Deployed applications using this stack</span>
+    <div class="qs-step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <div class="step-title">Configure Daraja credentials</div>
+        <div class="step-desc">Get a free Safaricom Daraja sandbox account at developer.safaricom.co.ke. No real money required.</div>
+        <div class="code-block"><span class="co"># Environment variables</span><br>
+export MPESA_CONSUMER_KEY=<span class="s">"your_key"</span><br>
+export MPESA_CONSUMER_SECRET=<span class="s">"your_secret"</span><br>
+export MPESA_SHORTCODE=<span class="s">"174379"</span>  <span class="co"># sandbox</span><br>
+export MPESA_ENV=<span class="s">"sandbox"</span></div>
       </div>
-      <div class="stat-item">
-        <span class="stat-n">47</span>
-        <span class="stat-l">Kenyan counties served by at least one tool</span>
+    </div>
+    <div class="qs-step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <div class="step-title">Or clone a complete app</div>
+        <div class="step-desc">Pick any domain and deploy a working app today. All apps work on Streamlit Cloud free tier.</div>
+        <div class="code-block"><span class="co"># Example: Kenya farmer advisory</span><br>
+<span class="k">git clone</span> https://github.com/gabrielmahia/shamba-ai<br>
+<span class="k">cd</span> shamba-ai<br>
+<span class="k">pip install</span> -r requirements.txt<br>
+<span class="co"># Add GOOGLE_API_KEY to .streamlit/secrets.toml</span><br>
+<span class="k">streamlit run</span> app.py</div>
       </div>
-      <div class="stat-item">
-        <span class="stat-n">6</span>
-        <span class="stat-l">Engineering guides — M-Pesa, USSD, SMS, mobile UX, regulatory, chama</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-n">12+</span>
-        <span class="stat-l">Open source developer packages on GitHub</span>
+    </div>
+    <div class="qs-step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <div class="step-title">Contribute or extend</div>
+        <div class="step-desc">Every tool is MIT (infrastructure) or CC BY-NC-ND (apps). Build on top, open issues, or reach out to collaborate on the LINGUA Africa grant work.</div>
+        <div class="code-block"><span class="co"># Hub CLI to explore all MCP servers</span><br>
+<span class="k">pip install</span> kenya-mcp-hub<br>
+<span class="fn">kenya-mcp-hub</span> list</div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  The Nairobi Stack · github.com/gabrielmahia/nairobi-stack · CC BY 4.0 · contact@aikungfu.dev
+  <span>© 2026 <a href="https://github.com/gabrielmahia" target="_blank">Gabriel Mahia</a> · <a href="mailto:contact@aikungfu.dev">contact@aikungfu.dev</a></span>
+  <div class="foot-links">
+    <a href="https://github.com/gabrielmahia/nairobi-stack" target="_blank">GitHub</a>
+    <a href="https://gabrielmahia.github.io" target="_blank">Portfolio</a>
+    <a href="https://huggingface.co/gmahia" target="_blank">HuggingFace</a>
+    <a href="https://pypi.org/user/gmahia" target="_blank">PyPI</a>
+  </div>
 </footer>
-
 </body>
 </html>
