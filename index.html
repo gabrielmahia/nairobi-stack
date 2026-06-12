@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Nairobi Stack — East Africa Developer Reference</title>
-<meta name="description" content="East Africa coordination infrastructure stack. 130+ open-source tools, 12 MCP servers — financial, civic, health, agricultural systems in Kiswahili.'s digital infrastructure. M-PESA, USSD, Africa's Talking, NHIF, KRA, and more.">
+<meta name="description" content="East Africa coordination infrastructure stack. 130+ open-source tools, 23 MCP servers — financial, civic, health, agricultural systems in Kiswahili.'s digital infrastructure. M-PESA, USSD, Africa's Talking, NHIF, KRA, and more.">
 <meta property="og:title" content="The Nairobi Stack">
-<meta property="og:description" content="Build on East Africa's coordination infrastructure. 130+ open-source tools, 12 MCP servers, datasets, and APIs.">
+<meta property="og:description" content="Build on East Africa's coordination infrastructure. 130+ open-source tools, 23 MCP servers, datasets, and APIs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -191,7 +191,7 @@ footer a:hover{color:var(--blue)}
     <div class="eyebrow-text">Developer Reference · East Africa</div>
   </div>
   <h1>The <span class="accent">Nairobi</span><br><span class="accent2">Stack</span></h1>
-  <p class="hero-sub">The coordination infrastructure stack for East Africa. Reference for building on Kenya's financial, civic, health, and agricultural systems — 130+ open-source tools, 12 MCP servers, 4 Swahili NLP datasets. MCP servers, APIs, open-source tools, NLP datasets — everything you need to ship.</p>
+  <p class="hero-sub">The coordination infrastructure stack for East Africa. Reference for building on Kenya's financial, civic, health, and agricultural systems — 130+ open-source tools, 23 MCP servers, 4 Swahili NLP datasets. MCP servers, APIs, open-source tools, NLP datasets — everything you need to ship.</p>
 
   <div class="hero-tags">
     <span class="tag green">M-PESA · Daraja API</span>
@@ -217,62 +217,38 @@ footer a:hover{color:var(--blue)}
 <!-- MCP SERVERS -->
 <section id="mcp">
   <div class="sec-label">Model Context Protocol</div>
-  <h2>MCP Servers</h2>
-  <p class="sec-desc">Plug East Africa's digital infrastructure directly into Claude, GPT-4, or Gemini. No custom API code required.</p>
+  <h2>MCP Servers — 23 Live</h2>
+  <p class="sec-desc">Plug East Africa's digital infrastructure directly into Claude, GPT-4, or Gemini. No custom API code. All on PyPI. All MIT licensed. Complete coordination coverage: economic, physical, social, and civic layers.</p>
 
   <div class="mcp-grid">
     <div class="mcp-card">
       <div class="mcp-name"><a href="https://github.com/gabrielmahia/mpesa-mcp" target="_blank">mpesa-mcp</a></div>
-      <div class="mcp-desc">M-PESA Daraja API as MCP tools — STK push, B2C payments, balance queries, transaction status, C2B URL registration. First African mobile money MCP server.</div>
+      <div class="mcp-desc">M-PESA Daraja API as MCP tools — STK push, B2C payments, balance queries, transaction status, C2B registration. First African mobile money MCP. 7 tools.</div>
       <div class="mcp-badges">
         <span class="badge badge-pypi">pip install mpesa-mcp</span>
-        <span class="badge badge-live">400+ downloads</span>
         <span class="badge badge-mit">MIT</span>
-      </div>
-    </div>
-    <div class="mcp-card">
-      <div class="mcp-name"><a href="https://github.com/gabrielmahia/wapimaji-mcp" target="_blank">wapimaji-mcp</a></div>
-      <div class="mcp-desc">Kenya water infrastructure data as MCP tools — borehole registry, Water Services Regulatory Board data, county water access statistics.</div>
-      <div class="mcp-badges">
-        <span class="badge badge-live">Live</span>
-        <span class="badge badge-mit">MIT</span>
-      </div>
-    </div>
-    <div class="mcp-card">
-      <div class="mcp-name"><a href="https://github.com/gabrielmahia/kenya-health-mcp" target="_blank">kenya-health-mcp</a></div>
-      <div class="mcp-desc">Kenya DHIS2 / KHIS health data as MCP tools — facility search, maternal health indicators, immunization coverage. Swahili-native tool descriptions.</div>
-      <div class="mcp-badges">
-        <span class="badge badge-live">Live</span>
-        <span class="badge badge-mit">MIT</span>
-      </div>
-    </div>
-    <div class="mcp-card">
-      <div class="mcp-name"><a href="https://github.com/gabrielmahia/kenya-legal-rag" target="_blank">kenya-legal-rag</a></div>
-      <div class="mcp-desc">RAG over Kenya Constitution, Employment Act, Land Act, Companies Act, Data Protection Act. Query Kenya's legal corpus in English or Swahili via MCP.</div>
-      <div class="mcp-badges">
-        <span class="badge badge-live">MCP Compatible</span>
-        <span class="badge badge-mit">MIT</span>
-      </div>
-    </div>
-    <div class="mcp-card">
-      <div class="mcp-name"><a href="https://github.com/gabrielmahia/bima-mcp" target="_blank">bima-mcp</a></div>
-      <div class="mcp-desc">Insurance intelligence — NHIF coverage queries, parametric crop risk scoring (NDMA/ACRE Africa methodology), microinsurance comparison, community risk pool sizing. 6 tools.</div>
-      <div class="mcp-badges">
-        <span class="badge badge-pypi">pip install bima-mcp</span>
-        <span class="badge badge-mit">MIT</span>
+        <span class="badge badge-live">1,200+ downloads</span>
       </div>
     </div>
     <div class="mcp-card">
       <div class="mcp-name"><a href="https://github.com/gabrielmahia/mkopo-mcp" target="_blank">mkopo-mcp</a></div>
-      <div class="mcp-desc">Alternative credit scoring — 300–850 score from M-PESA behavioral signals. No formal credit history required. Loan eligibility and credit improvement. 5 tools.</div>
+      <div class="mcp-desc">Alternative credit scoring — 300–850 score from M-PESA behavioral signals, no formal credit history required. Loan eligibility and improvement paths. 5 tools.</div>
       <div class="mcp-badges">
         <span class="badge badge-pypi">pip install mkopo-mcp</span>
         <span class="badge badge-mit">MIT</span>
       </div>
     </div>
     <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/bima-mcp" target="_blank">bima-mcp</a></div>
+      <div class="mcp-desc">Insurance intelligence — NHIF coverage, parametric crop risk scoring (NDMA/ACRE methodology), microinsurance comparison, community risk pool sizing. 6 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install bima-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
       <div class="mcp-name"><a href="https://github.com/gabrielmahia/soko-mcp" target="_blank">soko-mcp</a></div>
-      <div class="mcp-desc">Commodity price intelligence — regional price comparison across East Africa, trend analysis, sell/hold decision support for farmers. Closes the information asymmetry gap. 5 tools.</div>
+      <div class="mcp-desc">Commodity price intelligence — regional price comparison across East Africa, trend analysis, sell/hold decision support for farmers. Closes information asymmetry. 5 tools.</div>
       <div class="mcp-badges">
         <span class="badge badge-pypi">pip install soko-mcp</span>
         <span class="badge badge-mit">MIT</span>
@@ -280,27 +256,157 @@ footer a:hover{color:var(--blue)}
     </div>
     <div class="mcp-card">
       <div class="mcp-name"><a href="https://github.com/gabrielmahia/sifa-mcp" target="_blank">sifa-mcp</a></div>
-      <div class="mcp-desc">Portable reputation system — worker profiles, verified service records, trust scores, professional references. Economic mobility through reputation portability. 6 tools.</div>
+      <div class="mcp-desc">Reputation and trust scoring for informal economy participants — chamas, boda riders, kiosk owners. Portable trust layer without formal credit bureaus. 5 tools.</div>
       <div class="mcp-badges">
         <span class="badge badge-pypi">pip install sifa-mcp</span>
         <span class="badge badge-mit">MIT</span>
       </div>
     </div>
-  </div>
-
-  <div class="code-block" style="margin-top:24px">
-    <span class="co"># Install all Kenya MCP servers via hub</span><br>
-    <span class="k">pip install</span> kenya-mcp-hub<br><br>
-    <span class="co"># Add to Claude Code</span><br>
-    <span class="k">claude mcp add</span> mpesa <span class="s">--</span> mpesa-mcp<br>
-    <span class="k">claude mcp add</span> water <span class="s">--</span> wapimaji-mcp<br>
-    <span class="k">claude mcp add</span> health <span class="s">--</span> kenya-health-mcp<br>
-    <span class="k">claude mcp add</span> bima <span class="s">--</span> bima-mcp<br>
-    <span class="k">claude mcp add</span> mkopo <span class="s">--</span> mkopo-mcp<br>
-    <span class="k">claude mcp add</span> soko <span class="s">--</span> soko-mcp<br>
-    <span class="k">claude mcp add</span> sifa <span class="s">--</span> sifa-mcp
-  </div>
-</section>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/remit-mcp" target="_blank">remit-mcp</a></div>
+      <div class="mcp-desc">Remittance guidance and comparison — corridor rates, KYC requirements, recipient options, and diaspora investment pathways from abroad. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install remit-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/kra-mcp" target="_blank">kra-mcp</a></div>
+      <div class="mcp-desc">Kenya Revenue Authority tax compliance — PAYE calculator, VAT guide, PIN registration, withholding tax rates, investment incentives. 1st world: TurboTax/HMRC. 6 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install kra-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/faida-mcp" target="_blank">faida-mcp</a></div>
+      <div class="mcp-desc">Kenya capital markets — Treasury bond calculator, NSE equities guide, unit trust comparison, diaspora investment, IPO participation. 1st world: Fidelity/Schwab. 6 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install faida-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/wapimaji-mcp" target="_blank">wapimaji-mcp</a></div>
+      <div class="mcp-desc">Kenya drought and water access — NDMA drought phase monitoring, borehole registry, water point distances, county water coverage. 6 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install wapimaji-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/nishati-mcp" target="_blank">nishati-mcp</a></div>
+      <div class="mcp-desc">Kenya energy access — KPLC connection guidance, electricity tariff calculator, off-grid solar options, rural electrification programs, consumer rights. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install nishati-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/usafiri-mcp" target="_blank">usafiri-mcp</a></div>
+      <div class="mcp-desc">Kenya transport and logistics — matatu route finder, NTSA services guide, boda licensing, freight logistics options, passenger rights. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install usafiri-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/ardhi-mcp" target="_blank">ardhi-mcp</a></div>
+      <div class="mcp-desc">Kenya land administration — title search guidance, land rates, subdivision process, dispute resolution pathways (NLC/ELC), land rights. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install ardhi-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/afya-mcp" target="_blank">afya-mcp</a></div>
+      <div class="mcp-desc">Kenya health system navigation — NHIF/SHA coverage queries, facility finder, CHW services, maternal health milestones, essential medicines. 6 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install afya-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/afya-ya-akili-mcp" target="_blank">afya-ya-akili-mcp</a></div>
+      <div class="mcp-desc">Kenya mental health resources — therapist finder, crisis lines (Befrienders Kenya 0800 723 253), teletherapy, workplace wellness, rights under Mental Health Act 2022. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install afya-ya-akili-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/elimu-mcp" target="_blank">elimu-mcp</a></div>
+      <div class="mcp-desc">Kenya education system — school registry, KCSE/KCPE results guidance, HELB student loans, TVET programs, adult literacy resources. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install elimu-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/kazi-mcp" target="_blank">kazi-mcp</a></div>
+      <div class="mcp-desc">Kenya labor market — employment rights, informal sector guidance, gig economy protection, job search resources, NSSF/NHIF worker rights. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install kazi-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/haki-ya-kazi-mcp" target="_blank">haki-ya-kazi-mcp</a></div>
+      <div class="mcp-desc">Kenya labour rights — minimum wages, unfair dismissal guidance, maternity/paternity rights, trade union directory, Labour Relations Court. 1st world: ACAS/NLRB. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install haki-ya-kazi-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/kilimo-mcp" target="_blank">kilimo-mcp</a></div>
+      <div class="mcp-desc">Kenya precision agriculture — crop calendar, fertilizer recommendations, pest/disease alerts, market timing, KALRO varieties, input cost calculator. 1st world: Climate Corp. 6 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install kilimo-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/jumuia-mcp" target="_blank">jumuia-mcp</a></div>
+      <div class="mcp-desc">Kenya community finance — SACCO finder, chama formation guide, cooperative benefits, SACCO loan types and rates, cooperative member rights. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install jumuia-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/nyumba-mcp" target="_blank">nyumba-mcp</a></div>
+      <div class="mcp-desc">Kenya housing — rental market guide, tenant rights, building permit process, affordable housing programs (Boma Yangu), housing finance and mortgages. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install nyumba-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/habari-mcp" target="_blank">habari-mcp</a></div>
+      <div class="mcp-desc">Kenya civic information — Kenya Gazette search, government tender finder, open data sources, parliament tracker, official citizen feedback channels. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install habari-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/mazingira-mcp" target="_blank">mazingira-mcp</a></div>
+      <div class="mcp-desc">Kenya environment — NEMA permit guidance, climate data sources, conservation areas, environmental rights under Constitution Art. 42, climate adaptation. 5 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install mazingira-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/civic-agent-kit" target="_blank">civic-agent-kit</a></div>
+      <div class="mcp-desc">Unified Kenya civic AI SDK — agent builder, compliance tools, NHIF/KRA/NTSA integrations, Swahili locale support. Underlying SDK for the full stack. 8 tools.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install civic-agent-kit</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+  </div></section>
 
 <!-- KENYA APIs -->
 <div class="band" id="apis">
