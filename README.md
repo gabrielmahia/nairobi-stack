@@ -1,6 +1,9 @@
 # nairobi-stack
 
-**The engineering guide for building software products in East Africa.**
+> *The largest open-source MCP coordination infrastructure for the Global South.*  
+> *31 servers. Local-first. Data-sovereign. MIT licensed.*
+
+**The engineering guide for building software products in East Africa — and everywhere institutions are under-resourced.**
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightblue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
