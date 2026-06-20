@@ -47,6 +47,19 @@ This guide is built from real integration work across three production systems �
 
 ---
 
+
+## 📊 Portfolio Stats — June 2026
+
+| Platform | Status |
+|----------|--------|
+| PyPI packages | 31 live (v0.1.1 · v0.1.9 for mpesa-mcp) |
+| Glama directory | 31 indexed |
+| Smithery.ai | Indexed (3+ confirmed) |
+| awesome-mcp-servers | mpesa-mcp listed · PR #8363 open |
+| HuggingFace datasets | 5 datasets · 246 total downloads |
+| Dev.to articles | 15 published · 244+ views |
+| DPGA submissions | 2 under review · 1 pending completion |
+
 ## Contributing
 
 This is a living document. If you've built something in East Africa and learned something the hard way, open a PR. See [CONTRIBUTING.md](CONTRIBUTING.md).
