@@ -48,6 +48,54 @@ This guide is built from real integration work across three production systems �
 ---
 
 
+
+## Why This Exists
+
+> *"Build Rails, Not Trains."*
+
+TCP/IP didn't control the internet — it enabled it.
+Railroads didn't control freight — they enabled an economy.
+M-Pesa didn't control money — it enabled transactions at scale.
+
+The 31 MCP servers in this stack are rails.
+
+They give AI agents structured, authenticated, locally-processed access to:
+the M-PESA API, Kenya's 47-county government layer, NDMA drought data,
+land title systems, health infrastructure, education records, and civic institutions.
+
+Any developer — anywhere — can `pip install mpesa-mcp` and give an AI agent
+the ability to trigger a mobile payment in Kenya in under 120 seconds.
+
+**That's the rail. What you build on it is the train.**
+
+---
+
+### Structural Absences, Not Competitive Gaps
+
+These servers weren't built because no one had thought of payments, drought data, or land records.
+They were built because the engineer with the right intersection of skills hadn't built them yet.
+
+The intersection: Kenyan institutional knowledge + diaspora perspective + AI infrastructure fluency.
+
+That intersection doesn't exist in San Francisco or London.
+It exists here.
+
+---
+
+### The Stewardship Principle
+
+Every decision in this stack was made with one question:
+*"What should I preserve, improve, and hand forward?"*
+
+- MIT license: so others can build on it without asking permission
+- Local-first architecture: so communities steward their own data
+- Human-in-the-loop: so AI assists, never decides unilaterally
+- Offline sovereign tier: so the stack survives when the internet doesn't
+
+This is not a product. It is infrastructure.
+Infrastructure is built for the people who come after you.
+
+---
 ## 📊 Portfolio Stats — June 2026
 
 | Platform | Status |
