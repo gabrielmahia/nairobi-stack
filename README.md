@@ -12,6 +12,70 @@ A practical, opinionated reference for developers — in Kenya, the diaspora, or
 
 ---
 
+
+## What Gets Built On This
+
+These are not hypothetical. They are the trains for which these rails were built.
+
+---
+
+### Scenario 1: The rural health worker
+A community health worker in Kisumu runs `afya-mcp` + `offline-mcp` on a tablet
+with no internet. She asks: *"What is the correct malaria treatment for a 4-year-old
+weighing 15kg?"* The query runs against a local Llama model. No data leaves the
+tablet. The answer arrives in Swahili in under 3 seconds.
+**Rails used:** `afya-mcp`, `offline-mcp`, `tafsiri-mcp`
+
+---
+
+### Scenario 2: The smallholder farmer
+A maize farmer in Nakuru wants to know whether to sell now or hold for two weeks.
+She opens WhatsApp, sends a voice note to a bot powered by `soko-mcp`. The bot
+returns current prices across eight East African markets, trend direction, and a
+sell/hold recommendation with the reasoning shown.
+**Rails used:** `soko-mcp`, `kilimo-mcp`
+
+---
+
+### Scenario 3: The Kenyan diaspora member in Virginia
+A Kenyan living in Manassas, Virginia discovers that a caretaker has encroached on
+his father's land in Kiambu. He needs to understand his legal options, initiate a
+dispute, and manage the process remotely. He uses `ardhi-mcp` + `familia-mcp` +
+`fomu-mcp` to understand the legal path, draft the initial letter, and track
+required documents — without hiring a Kenyan lawyer for the preliminary steps.
+**Rails used:** `ardhi-mcp`, `familia-mcp`, `fomu-mcp`, `diaspora-mcp`
+
+---
+
+### Scenario 4: The first-time SACCO member
+A 23-year-old boda boda rider in Nairobi wants to join a SACCO but doesn't know
+which one fits his income profile, what the obligations are, or whether the
+institution is legitimate. `jumuia-mcp` walks him through SACCO types, finds
+SASRA-regulated options in his county, and explains what joining actually commits
+him to. In Swahili. On his phone.
+**Rails used:** `jumuia-mcp`, `sifa-mcp`, `tafsiri-mcp`
+
+---
+
+### Scenario 5: The county government AI deployment
+A county government in Western Kenya wants to deploy an AI assistant for
+citizen services — permit status, budget enquiries, ward information. They deploy
+the SII Stack on a local server. Citizen queries hit the sovereign tier first.
+Only complex reasoning escalates to cloud inference. Citizen data never leaves
+the county server.
+**Rails used:** `county-mcp`, `fomu-mcp`, `habari-mcp`, SII Stack sovereign tier
+
+---
+
+**Each scenario above can be built today.** The servers are live on PyPI.
+The SII Stack is open-source. The architecture is documented.
+What's needed is someone who wants to run the train.
+
+→ [SII Stack](https://github.com/gabrielmahia/sii-stack) ·
+[Browse all 31 servers](https://glama.ai/mcp/servers?query=author%3Agabrielmahia) ·
+[PyPI](https://pypi.org/user/gmahia)
+
+
 ## Why this exists
 
 Western developer documentation assumes broadband, credit cards, app stores, and English-only users. East African users may have any combination of: feature phones, sporadic 2G, M-Pesa (no bank account), Kiswahili or Sheng as primary language, prepaid data, and screen sizes that haven't been in a Western product review since 2014.
