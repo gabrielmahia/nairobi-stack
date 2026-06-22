@@ -97,32 +97,39 @@ Infrastructure is built for the people who come after you.
 
 ---
 
-## East Africa Expansion Roadmap
+## Built for Africa. Deployable Anywhere.
 
-### Current Coverage (Kenya)
-31 MCP servers covering Kenya's complete institutional stack:
-payments, land, health, education, transport, environment, community, civic, legal.
+### The architecture is continent-generic. The data is local.
 
-### Next: Tanzania
-Tanzania has 60 million people, Swahili as national language, and fewer legacy institutional
-constraints than Kenya — the same leapfrogging conditions that made M-Pesa possible.
+Every server in this stack separates **infrastructure** (tools, schemas, routing logic)
+from **data** (the Kenya-specific records, county budgets, NDMA classifications).
 
-**Planned Tanzania servers:**
-- `tanzania-civic-mcp` — Tanzania government institutions and civic layer
-- `zanzibar-mcp` — Zanzibar semi-autonomous governance and tourism data
-- Expansion of `tafsiri-mcp` to cover Tanzania Swahili dialect distinctions
+Replace the data layer with Uganda's NSSF records, Nigeria's CAC registry,
+Ghana's GhIPSS payment rails, or Tanzania's BRELA business registration —
+and the same architecture works without changing a line of application code.
 
-### Dual-country principle
-Every server in this stack is designed so that Kenya-specific data can be
-replaced with Tanzania, Uganda, or Rwanda data with minimal architecture change.
-The rails are generic. The data is local.
+### Current depth: Kenya (31 servers)
+Kenya is the starting point because it has the most developed data infrastructure
+for this kind of tooling: M-Pesa, a mature Daraja API, NDMA drought data,
+a 47-county government layer with structured data, and an active tech ecosystem.
 
-### The demographic argument
-Median age: Africa ≈ 19 | Europe ≈ 45
+### Expansion logic: depth before breadth
+The right expansion sequence is not "build one thin server for every African country."
+It is "build deep coverage in one country, then lift and replicate."
 
-East Africa's youth population is not a future asset. It is a present reality.
-AI tools built for 19-year-olds who have smartphones but no formal credit history,
-no land title, and no institutional trust — that is the addressable market.
+The next depth targets, in order:
+1. **Tanzania** — 60M people, Swahili national language, fewer legacy constraints, quieter governance
+2. **Uganda** — 48M people, mobile money penetration, East African Community integration
+3. **Nigeria** — 220M people, largest African economy, fintech ecosystem (OPay, Flutterwave, Paystack)
+4. **Ghana** — 33M people, GhIPSS, stable institutions, English-speaking
+
+Each is a separate data layer on the same rail architecture.
+
+### What "Africa-wide" actually means
+Swahili covers East Africa and large parts of Central Africa (including DRC, Rwanda, Burundi).
+`tafsiri-mcp` and `swahili-civic-nlp` are already cross-border tools.
+`sifa-mcp` (portable reputation) and `soko-mcp` (market prices) have no inherent
+Kenya boundary — the schema works for any East African market.
 
 ---
 ## 📊 Portfolio Stats — June 2026
