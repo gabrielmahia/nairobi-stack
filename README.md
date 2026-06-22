@@ -96,6 +96,35 @@ This is not a product. It is infrastructure.
 Infrastructure is built for the people who come after you.
 
 ---
+
+## East Africa Expansion Roadmap
+
+### Current Coverage (Kenya)
+31 MCP servers covering Kenya's complete institutional stack:
+payments, land, health, education, transport, environment, community, civic, legal.
+
+### Next: Tanzania
+Tanzania has 60 million people, Swahili as national language, and fewer legacy institutional
+constraints than Kenya — the same leapfrogging conditions that made M-Pesa possible.
+
+**Planned Tanzania servers:**
+- `tanzania-civic-mcp` — Tanzania government institutions and civic layer
+- `zanzibar-mcp` — Zanzibar semi-autonomous governance and tourism data
+- Expansion of `tafsiri-mcp` to cover Tanzania Swahili dialect distinctions
+
+### Dual-country principle
+Every server in this stack is designed so that Kenya-specific data can be
+replaced with Tanzania, Uganda, or Rwanda data with minimal architecture change.
+The rails are generic. The data is local.
+
+### The demographic argument
+Median age: Africa ≈ 19 | Europe ≈ 45
+
+East Africa's youth population is not a future asset. It is a present reality.
+AI tools built for 19-year-olds who have smartphones but no formal credit history,
+no land title, and no institutional trust — that is the addressable market.
+
+---
 ## 📊 Portfolio Stats — June 2026
 
 | Platform | Status |
