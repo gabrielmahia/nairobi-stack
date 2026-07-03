@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Nairobi Stack — East Africa Developer Reference</title>
-<meta name="description" content="East Africa coordination infrastructure stack. 130+ open-source tools, 23 MCP servers — financial, civic, health, agricultural systems in Kiswahili.'s digital infrastructure. M-PESA, USSD, Africa's Talking, NHIF, KRA, and more.">
+<meta name="description" content="East Africa coordination infrastructure stack. 130+ open-source tools, 35 MCP servers — financial, civic, health, and agricultural systems in Kiswahili. M-PESA, USSD, Africa's Talking, NHIF, KRA, and more.">
 <meta property="og:title" content="The Nairobi Stack">
-<meta property="og:description" content="Build on East Africa's coordination infrastructure. 130+ open-source tools, 23 MCP servers, datasets, and APIs.">
+<meta property="og:description" content="Build on East Africa's coordination infrastructure. 130+ open-source tools, 35 MCP servers, datasets, and APIs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -191,7 +191,7 @@ footer a:hover{color:var(--blue)}
     <div class="eyebrow-text">Developer Reference · East Africa</div>
   </div>
   <h1>The <span class="accent">Nairobi</span><br><span class="accent2">Stack</span></h1>
-  <p class="hero-sub">The coordination infrastructure stack for East Africa. Reference for building on Kenya's financial, civic, health, and agricultural systems — 130+ open-source tools, 23 MCP servers, 4 Swahili NLP datasets. MCP servers, APIs, open-source tools, NLP datasets — everything you need to ship.</p>
+  <p class="hero-sub">The coordination infrastructure stack for East Africa. Reference for building on Kenya's financial, civic, health, and agricultural systems — 130+ open-source tools, 35 MCP servers, 4 Swahili NLP datasets. MCP servers, APIs, open-source tools, NLP datasets — everything you need to ship.</p>
 
   <div class="hero-tags">
     <span class="tag green">M-PESA · Daraja API</span>
@@ -217,9 +217,9 @@ footer a:hover{color:var(--blue)}
 <!-- MCP SERVERS -->
 <section id="mcp">
   <div class="sec-label">Model Context Protocol</div>
-  <h2>MCP Servers — 30 Live</h2>
+  <h2>MCP Servers — 35 Live</h2>
   <p class="sec-desc sec-security">🔒 Security posture: all servers audited against OWASP MCP Top 10. Run <code>uvx mcp-scan@latest</code> before production use.</p>
-    <p class="sec-desc">Plug East Africa's digital infrastructure directly into Claude Sonnet 5 (recommended — released June 30, 2026), Claude Opus 4.8, GPT-4, Gemini, or any MCP-compatible agent. No custom API code. All on PyPI. All MIT licensed. 30 servers covering the full coordination stack — the tool layer for AI agent swarms operating in East Africa.</p>
+    <p class="sec-desc">Plug East Africa's digital infrastructure directly into Claude Sonnet 5 (recommended — released June 30, 2026), Claude Opus 4.8, GPT-4, Gemini, or any MCP-compatible agent. No custom API code. All on PyPI. All MIT licensed. 35 servers covering the full coordination stack — the tool layer for AI agent swarms operating in East Africa.</p>
 
   <div class="mcp-grid">
     <div class="mcp-card">
@@ -406,7 +406,47 @@ footer a:hover{color:var(--blue)}
         <span class="badge badge-mit">MIT</span>
       </div>
     </div>
-  </div></section>
+      <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/africa-coord-bus" target="_blank">africa-coord-bus</a></div>
+      <div class="mcp-desc">Cross-domain coordination event bus — routes signals between domain servers (drought alerts reach insurance, crop advisory, health, county, and market tools automatically). Offline-first JSONL queue with a built-in Kenya routing table.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install africa-coord-bus</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/decision-intelligence-mcp" target="_blank">decision-intelligence-mcp</a></div>
+      <div class="mcp-desc">Strategic decision frameworks exposed as agent-callable tools — structured option analysis for planners and institutions weighing constrained choices.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install decision-intelligence-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/fomu-mcp" target="_blank">fomu-mcp</a></div>
+      <div class="mcp-desc">Kenyan government forms and document requirements as structured tools — what a process needs, where to file it, and what it costs, without navigating scattered portals.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install fomu-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/kenya-health-mcp" target="_blank">kenya-health-mcp</a></div>
+      <div class="mcp-desc">Kenya health system reference — facility registry, service availability, and referral-level data for health workers and the agents assisting them.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install kenya-health-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+    <div class="mcp-card">
+      <div class="mcp-name"><a href="https://github.com/gabrielmahia/swahili-health-mcp" target="_blank">swahili-health-mcp</a></div>
+      <div class="mcp-desc">Health data tools with Swahili-native descriptions and outputs — facilities, maternal health, and immunization signals usable by community health workers in their working language.</div>
+      <div class="mcp-badges">
+        <span class="badge badge-pypi">pip install swahili-health-mcp</span>
+        <span class="badge badge-mit">MIT</span>
+      </div>
+    </div>
+</div></section>
 
 <!-- KENYA APIs -->
 <div class="band" id="apis">
