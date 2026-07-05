@@ -6,7 +6,7 @@ EXECUTION_BLUEPRINT.md §7 for the full multiplier analysis).
 
 | # | Gap | Why it exists | Who benefits | What exists today | Reusable form | Status |
 |---|---|---|---|---|---|---|
-| G1 | Swahili agent-task evaluation suite | Global evals are English-first; no regional ground truth for agent quality | Every builder targeting 100M+ Swahili speakers | Generic LLM benchmarks only | Benchmark + dataset | **Open — top priority** |
+| G1 | Swahili agent-task evaluation suite | Global evals are English-first; no regional ground truth for agent quality | Every builder targeting 100M+ Swahili speakers | Generic LLM benchmarks only | Benchmark + dataset | **Seeded — kipimo v0.1** (PyPI: kipimo · HF: gmahia/kipimo · 46 tasks; native-speaker review = issue #1) |
 | G2 | Live-data partnership framework (data-sovereignty terms) | Registries are paper/partial; no template for opening them without surrendering them | Counties, ministries, cooperatives | DEMO datasets on all 35 servers | Standard + legal template | Open — critical path |
 | G3 | Measured pilot deployment with outcome study | Rails unproven in the field; the leapfrog thesis needs one honest data point | The entire thesis (falsification clock ~2027) | reli on-ramp, deploy-ready demo | Reference implementation + study | Open |
 | G4 | Registry-integrity monitoring (ground-truth defense) | Poisoned registries are the coming attack surface | Anyone consuming institutional data | Nothing regional | MCP + monitoring standard | Open |
