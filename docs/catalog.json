@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "generated": "machine-derived from live HF + Kaggle + MCP Registry",
   "description": "The index of the railroad: each dataset -> the MCP server it backs -> how to evaluate agents using it.",
   "eval": {
@@ -12,114 +12,98 @@
     {
       "name": "kenya-civic-data",
       "huggingface": "https://huggingface.co/datasets/gmahia/kenya-civic-data",
-      "kaggle": null,
-      "backs_server": "county-mcp",
-      "server_pypi": "county-mcp"
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/kenya-civic-data",
+      "backs_server": "county-mcp"
     },
     {
       "name": "swahili-civic-nlp",
       "huggingface": "https://huggingface.co/datasets/gmahia/swahili-civic-nlp",
-      "kaggle": null,
-      "backs_server": "tafsiri-mcp",
-      "server_pypi": "tafsiri-mcp"
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/swahili-civic-nlp",
+      "backs_server": "tafsiri-mcp"
     },
     {
       "name": "kenya-agricultural-qa",
       "huggingface": "https://huggingface.co/datasets/gmahia/kenya-agricultural-qa",
       "kaggle": "https://www.kaggle.com/datasets/gmahia/kenya-agricultural-qa",
-      "backs_server": "kilimo-mcp",
-      "server_pypi": "kilimo-mcp"
+      "backs_server": "kilimo-mcp"
     },
     {
       "name": "kenya-legal-nlp",
       "huggingface": "https://huggingface.co/datasets/gmahia/kenya-legal-nlp",
-      "kaggle": null,
-      "backs_server": "fomu-mcp",
-      "server_pypi": "fomu-mcp"
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/kenya-legal-nlp",
+      "backs_server": "fomu-mcp"
     },
     {
       "name": "kenya-mcp-data",
       "huggingface": "https://huggingface.co/datasets/gmahia/kenya-mcp-data",
-      "kaggle": null,
-      "backs_server": "reli-cli",
-      "server_pypi": "reli-cli"
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/kenya-mcp-data",
+      "backs_server": "reli-cli"
     },
     {
       "name": "military-strategy-classics",
       "huggingface": "https://huggingface.co/datasets/gmahia/military-strategy-classics",
-      "kaggle": null,
-      "backs_server": null,
-      "server_pypi": null
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/military-strategy-classics",
+      "backs_server": null
     },
     {
       "name": "philosophy-classics-structured",
       "huggingface": "https://huggingface.co/datasets/gmahia/philosophy-classics-structured",
-      "kaggle": null,
-      "backs_server": null,
-      "server_pypi": null
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/philosophy-classics-structured",
+      "backs_server": null
     },
     {
       "name": "african-kingdoms-history",
       "huggingface": "https://huggingface.co/datasets/gmahia/african-kingdoms-history",
-      "kaggle": null,
-      "backs_server": null,
-      "server_pypi": null
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/african-kingdoms-history",
+      "backs_server": null
     },
     {
       "name": "east-africa-agricultural-pd",
       "huggingface": "https://huggingface.co/datasets/gmahia/east-africa-agricultural-pd",
       "kaggle": "https://www.kaggle.com/datasets/gmahia/east-africa-agricultural-pd",
-      "backs_server": "kilimo-mcp",
-      "server_pypi": "kilimo-mcp"
+      "backs_server": "kilimo-mcp"
     },
     {
       "name": "swahili-historical-corpus-pd",
       "huggingface": "https://huggingface.co/datasets/gmahia/swahili-historical-corpus-pd",
       "kaggle": "https://www.kaggle.com/datasets/gmahia/swahili-historical-corpus-pd",
-      "backs_server": "tafsiri-mcp",
-      "server_pypi": "tafsiri-mcp"
+      "backs_server": "tafsiri-mcp"
     },
     {
       "name": "east-africa-health-historical-pd",
       "huggingface": "https://huggingface.co/datasets/gmahia/east-africa-health-historical-pd",
-      "kaggle": null,
-      "backs_server": "afya-mcp",
-      "server_pypi": "afya-mcp"
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/east-africa-health-historical-pd",
+      "backs_server": "afya-mcp"
     },
     {
       "name": "east-africa-legal-historical-pd",
       "huggingface": "https://huggingface.co/datasets/gmahia/east-africa-legal-historical-pd",
       "kaggle": "https://www.kaggle.com/datasets/gmahia/east-africa-legal-historical-pd",
-      "backs_server": "haki-ya-kazi-mcp",
-      "server_pypi": "haki-ya-kazi-mcp"
+      "backs_server": "haki-ya-kazi-mcp"
     },
     {
       "name": "africa-historical-maps-pd",
       "huggingface": "https://huggingface.co/datasets/gmahia/africa-historical-maps-pd",
-      "kaggle": null,
-      "backs_server": null,
-      "server_pypi": null
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/africa-historical-maps-pd",
+      "backs_server": null
     },
     {
       "name": "africa-open-climate-data",
       "huggingface": "https://huggingface.co/datasets/gmahia/africa-open-climate-data",
       "kaggle": "https://www.kaggle.com/datasets/gmahia/africa-open-climate-data",
-      "backs_server": "wapimaji-mcp",
-      "server_pypi": "wapimaji-mcp"
+      "backs_server": "wapimaji-mcp"
     },
     {
       "name": "africa-historical-photos-pd",
       "huggingface": "https://huggingface.co/datasets/gmahia/africa-historical-photos-pd",
-      "kaggle": null,
-      "backs_server": null,
-      "server_pypi": null
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/africa-historical-photos-pd",
+      "backs_server": null
     },
     {
       "name": "africa-expired-patents-pd",
       "huggingface": "https://huggingface.co/datasets/gmahia/africa-expired-patents-pd",
-      "kaggle": null,
-      "backs_server": null,
-      "server_pypi": null
+      "kaggle": "https://www.kaggle.com/datasets/gmahia/africa-expired-patents-pd",
+      "backs_server": null
     }
   ]
 }
