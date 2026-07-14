@@ -13,8 +13,10 @@ EXECUTION_BLUEPRINT.md §7 for the full multiplier analysis).
 | G5 | Machine-readable Kenyan law corpus (bilingual, structured) | Laws exist as PDFs; agents can't ground on them | Citizens, courts, legal-aid builders | kenya-legal-rag (partial), HF datasets | Dataset + schema standard | Partial |
 | G6 | University curriculum kit on the stack | Courses teach toys; real systems teach maintainers | Students, maintainer pipeline | Docs per repo | Template + course materials | Open |
 | G7 | Consent / indigenous-knowledge governance framework | Extraction without governance repeats the old pattern | Communities holding the knowledge | Nothing | Standard | Open — governance-gated |
-| G8 | Second-country routing table (bus standard port) | Kenya table proves the pattern; standard needs 2 implementations | Regional builders (TZ, UG, RW) | africa-coord-bus (KE) | Standard + implementation | Open |
+| G8 | Second-country routing table (bus standard port) | Kenya table proves the pattern; standard needs 2 implementations | Regional builders (TZ, UG, RW) | africa-coord-bus (KE) | Standard + implementation | **Shipped — africa-coord-bus 0.2.0** (Tanzania table + KE–TZ cross-border cascades + PORTING_GUIDE.md) |
 | G9 | Maintenance endowment + maintainer pipeline | Open infra dies of unpaid maintenance, not bad code | Everything above | None | Governance + funding model | Open — survival-class |
+
+| G10 | Type-level country lock-in in the event bus | `CoordinationEvent.location` is typed `KenyaLocation` (county/sub_county). The bus encodes Kenya in the type system, not merely as a default — invisible until a real second-country port | Every non-Kenya implementer | africa-coord-bus 0.2.0 (Tanzania rules carry location in `event.data` as a workaround) | Backwards-compatible `SubnationalLocation` with `KenyaLocation` retained as alias | **Open — surfaced by the G8 port** |
 
 **Closed gaps (for the record):** cross-domain event bus (africa-coord-bus) ·
 domain server fleet (35) · on-ramp (reli-cli) · official MCP Registry presence
