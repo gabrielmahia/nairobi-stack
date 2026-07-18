@@ -1,0 +1,25 @@
+# East Africa AI Coordination Stack
+> Open, MIT-licensed infrastructure for AI agents serving Swahili-speaking and East African
+> populations: MCP servers, an offline-first coordination event bus, Swahili agent-task
+> evaluation, and public-domain datasets. Model-agnostic: closed APIs, open-weight models,
+> and small distilled models are all first-class citizens.
+
+## Entry points
+- [reli-cli on PyPI](https://pypi.org/project/reli-cli/): installer and on-ramp — `pip install reli-cli && reli list`
+- [MCP Registry namespace](https://registry.modelcontextprotocol.io): 33 servers under `io.github.gabrielmahia`
+- [africa-coord-bus](https://pypi.org/project/africa-coord-bus/): coordination event bus, Kenya routing table, offline-first JSONL queue
+
+## Evaluation
+- [kipimo harness](https://github.com/gabrielmahia/kipimo): Swahili agent-task benchmark, 46 tasks; scoring never calls a model
+- [kipimo dataset](https://huggingface.co/datasets/gmahia/kipimo): task set with machine-derived golds
+- [Leaderboard](https://huggingface.co/spaces/gmahia/kipimo-leaderboard): comparable scores for any system
+
+## Datasets
+- [All East Africa datasets](https://huggingface.co/gmahia): civic, agricultural, legal, health, historical, climate — MIT or CC0/public-domain
+
+## Docs
+- [Gap Register](https://github.com/gabrielmahia/nairobi-stack/blob/main/docs/GAP_REGISTER.md): validated gaps driving all work
+- [Project doctrine](https://github.com/gabrielmahia/nairobi-stack/blob/main/docs/BAOBAB_DNA.md): engineering principles, 10-year maintenance horizon
+
+## Optional
+- [Reference apps](https://github.com/gabrielmahia): Streamlit demonstrations (DEMO-labeled, CC BY-NC-ND)
