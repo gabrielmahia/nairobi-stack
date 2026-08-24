@@ -37,7 +37,9 @@ REPOS = {
     "ardhi-mcp": "ardhi-mcp", "mazingira-mcp": "mazingira-mcp",
     "tafsiri-mcp": "tafsiri-mcp", "offline-mcp": "offline-mcp",
     "wapimaji-mcp": "wapimaji-mcp", "civic-agent-kit": "civic-agent-kit",
-    "decision-intelligence-mcp": "classical-strategy-mcp",
+    # repo publishes under its own name; classical-strategy-mcp is a superseded
+    # predecessor package (0.1.0) left on PyPI — retirement decision, not drift.
+    "decision-intelligence-mcp": "decision-intelligence-mcp",
     "swahili-civic-nlp": None, "kenya-legal-rag": None, "shamba-ai": None,
     "afyanipoa": None, "hakiyangu": None, "kenya-3d": None,
     "kenya-nowcast": None, "nairobi-stack": None,
