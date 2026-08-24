@@ -1,0 +1,49 @@
+name: Portfolio audit
+
+# The stack is built to be found years from now, often with no users in the
+# meantime to report a fault. This runs the fresh-install checks on a schedule
+# so breakage is caught before the first person who cares hits it.
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC (09:00 EAT)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write           # least privilege: open/update the findings issue only
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run audit
+        id: audit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/portfolio_audit.py
+        continue-on-error: true    # findings must not fail the run; they must be reported
+
+      - name: Open or update findings issue
+        if: steps.audit.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          title="Portfolio audit findings"
+          body="$(cat audit_report.md)"
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body" --label audit 2>/dev/null \
+              || gh issue create --title "$title" --body "$body"
+          fi
+
+      - name: Clean bill of health
+        if: steps.audit.outcome == 'success'
+        run: echo "No findings — all repos clean." >> "$GITHUB_STEP_SUMMARY"
