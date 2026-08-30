@@ -44,6 +44,27 @@ jobs:
               || gh issue create --title "$title" --body "$body"
           fi
 
+      - name: Awaiting-reply scan (people waiting on you)
+        id: awaiting
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/awaiting_reply.py
+        continue-on-error: true
+
+      - name: Open or update awaiting-reply issue
+        if: steps.awaiting.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          title="Awaiting your reply"
+          body="$(cat awaiting_reply.md)"
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
+
       - name: Clean bill of health
-        if: steps.audit.outcome == 'success'
-        run: echo "No findings — all repos clean." >> "$GITHUB_STEP_SUMMARY"
+        if: steps.audit.outcome == 'success' && steps.awaiting.outcome == 'success'
+        run: echo "No findings — all repos clean, nobody waiting." >> "$GITHUB_STEP_SUMMARY"
