@@ -1,0 +1,136 @@
+# Platform Inventory — everywhere this work lives
+
+**Verified 2026-09-05** by live API call to each platform. Nothing here is from
+memory. Re-verify before relying on a number: this file goes stale by design.
+
+**Read with:** [`SYSTEM_ENGINEERING.md`](SYSTEM_ENGINEERING.md) — architecture,
+standards, failure classes, and rules for collaborating agents.
+
+---
+
+## Why this file exists
+
+An engineer or AI system joining this work will otherwise assume the scope is the
+repository in front of them. It is not. The work spans eleven surfaces, several of
+which are private, and a change in one can silently break another — a PyPI release
+that fails to build, a renamed package that orphans a registry entry, a dataset
+card that drifts from the repo that generates it.
+
+## 1. GitHub — `gabrielmahia`
+
+**156 public repos · 8 private · 25 stars · 14 forks · 9 followers**
+
+**Coordination stack (public, MIT):** `africa-coord-bus`, `coord-ingest`,
+`kipimo`, `reli` (CLI), `nairobi-stack` (this hub), plus ~34 MCP servers.
+
+**Private (8):**
+
+| Repo | What it is |
+|---|---|
+| `nature-ai-evolution-lab` | Small-model capability evolution; evaluated by kipimo. Constitution hash-pinned |
+| `leapfrog-rd-foundry` | Global public-R&D → mechanism → recombination pipeline |
+| `Babayao` | — |
+| `blognet` | Google Apps Script editorial automation across 8 blogs |
+| `bgsec` / `bgwrite` | Blognet security auditor / editorial modules |
+| `ops-shield` / `ops-private` | Workstation hardening, biomimicry patterns |
+
+**Automation (Mondays 06:00 UTC, in `nairobi-stack`):** `portfolio-audit.yml`
+(build breaks, version drift, unpinned majors, hygiene) and `awaiting-reply.yml`
+(humans waiting on a response, email-independent). Both green.
+
+## 2. PyPI — `gmahia`
+
+| Package | Version | Package | Version |
+|---|---|---|---|
+| `africa-coord-bus` | **0.4.0** | `jumuia-mcp` | 0.1.6 |
+| `coord-ingest` | **0.4.0** | `familia-mcp` | 0.1.5 |
+| `kipimo` | **0.4.0** | `ardhi-mcp` | 0.1.4 |
+| `mpesa-mcp` | **0.2.7** | `mazingira-mcp` | 0.1.4 |
+| `wapimaji-mcp` | **0.1.8** | `tafsiri-mcp` | 0.1.4 |
+| `civic-agent-kit` | 0.2.2 | `offline-mcp` | 0.1.4 |
+| `reli-cli` | 0.1.1 | `decision-intelligence-mcp` | 0.1.2 |
+| `classical-strategy-mcp` | 0.1.1 | **tombstone** — import raises, redirects |
+
+**Release discipline:** bump → build → cold-install in a clean venv → publish →
+verify live. Weekly audit catches drift between `main` and PyPI.
+
+## 3. HuggingFace — `gmahia`
+
+**17 datasets · 1 model · 2 Spaces** — 559 downloads/30d, **1 like**
+
+Datasets are public-domain sourced, CC-BY, all carrying license, task-category
+and language tags. Spaces: `kipimo-leaderboard` (static, client-side scoring —
+HF now requires PRO for Gradio) and `Art-and-Craft`.
+
+## 4. Kaggle — `gabrielmahia`
+
+**17 datasets** mirroring HuggingFace, CC-BY-4.0, plus a starter notebook
+(`east-africa-agriculture-quick-start`).
+
+**Correction to earlier belief:** dataset cover images **are** settable via API —
+include a file named `dataset-cover-image.png` in the upload. Previously recorded
+as UI-only. Covers are still missing; they need a design pass, not a batch job.
+
+## 5. MCP ecosystem
+
+- **Glama:** 32 servers. Grades visible per server. Nine C-grade READMEs upgraded
+  2026-09 (install, tools list, usage, integration, provenance) — awaiting recrawl.
+- **MCP Registry:** ~34 servers under `io.github.gabrielmahia`. The public search
+  API returned nothing on this run — treat the count as unverified today.
+
+**Grade driver, measured:** A vs C on Glama tracked entirely to README content, not
+structure. C-grade repos had identical tests, CI and tool counts — they just had no
+install command, no tool list, no example.
+
+## 6. Dev.to — `gabrielmahia`
+
+**41 articles · 25 reactions · 8 comments.** Problem-first framing only; no
+counts, no firsts. Publishing stays human-approved — it is the maintainer's voice.
+
+## 7. Streamlit Cloud
+
+`DarajaAI`, `ShuleAI`, `KaziAI` deployed. `coord-cascade-demo` pushed to GitHub,
+**not yet deployed** — UI-gated.
+
+## 8. Google Apps Script — `blognet` (private)
+
+Editorial automation across **8 Blogger properties**: gabrielmahia,
+dearimmigrant, mydearsoldier, fourhundred (400since1619), americans, aikungfu,
+jamestowne, kabla. Modules kept separate (Apps Script concatenates at runtime).
+Two switches: `SEC_MODE` (DRY_RUN→APPLY) and `SAFE_MODE` (redaction). Secrets in
+Script Properties, never git.
+
+## 9. Product Hunt / DPGA
+
+- **Product Hunt:** `mpesa-mcp` launched.
+- **DPGA:** `mpesa-mcp` (GID0093741) and `swahili-civic-nlp` (GID0093743) under
+  review; **`wapimaji-mcp` (GID0093744) INCOMPLETE** — portal-only, still open.
+
+## 10. Compute (see `nature-ai-evolution-lab`)
+
+Ladder climbed cheapest-first. Runnable today: Lightning AI free tier, Kaggle
+Notebooks, Modal Starter credits. Application-gated: Kaggle Benchmark Resource
+Grant (**Q4 opens 2026-09-07, closes 2026-10-28** — aimed at novel benchmarks,
+which describes kipimo), Google TPU Research Cloud, HF Community GPU Grant,
+Africa Compute Fund, OpenAI and Anthropic researcher-access programmes.
+
+## 11. Honest cross-platform adoption
+
+25 GitHub stars · 14 forks · 1 HF like · 25 Dev.to reactions · **three real
+external humans** (`punkpeye` of the Glama directory, `ainetwork-global`,
+`kushdab` of Africa's Talking).
+
+**PyPI download counts are mirror and crawler traffic, not adoption.** The tell:
+`coord-ingest` logged 331 downloads in its first week while unannounced and known
+to nobody. A flat band across a dozen obscure packages is a bot fingerprint, not a
+power law. **Do not cite downloads as evidence of anything.**
+
+## What breaks across platform boundaries
+
+| Change | Silently affects |
+|---|---|
+| Rename a package | PyPI predecessor orphaned · MCP registry entry · Glama listing |
+| Add an MCP tool | README tool list (AST-generated, so safe) · exact-count tests (assert a floor) |
+| Regenerate a dataset | HuggingFace card · Kaggle mirror · `nairobi-stack` catalog |
+| Change a license | Every downstream surface. **Never autonomous** |
+| Change notification email | Upstream threads go dark. This cost 100+ days and two collaboration offers |

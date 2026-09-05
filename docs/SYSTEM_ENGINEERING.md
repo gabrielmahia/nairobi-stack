@@ -2,6 +2,11 @@
 
 **Audience:** any engineer or AI system picking this work up cold.
 **Verified:** 2026-09-05 against live GitHub and PyPI, not from memory.
+**Full platform scope:** [`PLATFORM_INVENTORY.md`](PLATFORM_INVENTORY.md) — every
+surface this work lives on (GitHub incl. 8 private repos, PyPI, HuggingFace,
+Kaggle, Glama, MCP Registry, Dev.to, Streamlit, Apps Script/blognet, DPGA,
+compute), and what breaks across platform boundaries.
+
 **Companion:** `nature-ai-evolution-lab/docs/SYSTEM_ENGINEERING_COLLABORATION.md`
 covers the model-evolution research programme in depth. This document covers the
 whole estate and how to work in it.
