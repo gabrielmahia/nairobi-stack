@@ -340,3 +340,10 @@ If you're building on MCP for African markets, this is the venue to present.
 
 Model-agnostic by design: closed APIs, open-weight models, and small distilled models are all first-class citizens.
 <!-- /interconnect:v1 -->
+
+## Start here (engineers and AI systems)
+
+Read [`docs/SYSTEM_ENGINEERING.md`](docs/SYSTEM_ENGINEERING.md) first — portfolio
+state, architecture, engineering standards, known failure classes, honest
+adoption numbers, live human threads, and the rules for collaborating agents.
+Verified against live GitHub and PyPI rather than written from memory.
