@@ -1,0 +1,39 @@
+name: Refresh platform inventory
+
+# A document that says "verified on <date>" decays into a document that is wrong,
+# and a wrong inventory is worse than none because a collaborator plans against
+# it. The perishable part — the numbers — is therefore regenerated from live APIs.
+# The human prose is never touched by a machine.
+on:
+  schedule:
+    - cron: "0 6 * * 1"      # Mondays, with the other two audits
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+
+      - name: Regenerate live figures
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/refresh_inventory.py
+
+      - name: Commit only if the numbers actually moved
+        run: |
+          git config user.name "inventory-refresh"
+          git config user.email "gabrielmahia@users.noreply.github.com"
+          git add docs/PLATFORM_INVENTORY.md
+          if git diff --staged --quiet; then
+            echo "No change in platform figures." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git diff --staged --stat >> "$GITHUB_STEP_SUMMARY"
+            git commit -m "chore(inventory): refresh live platform figures [skip ci]"
+            git push
+          fi
