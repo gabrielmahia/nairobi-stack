@@ -7,6 +7,10 @@ surface this work lives on (GitHub incl. 8 private repos, PyPI, HuggingFace,
 Kaggle, Glama, MCP Registry, Dev.to, Streamlit, Apps Script/blognet, DPGA,
 compute), and what breaks across platform boundaries.
 
+**Spec compliance:** [`FLOURISHING_COMPLIANCE.md`](FLOURISHING_COMPLIANCE.md) — the
+R1–R12 matrix instantiating the Flourishing Intelligence Architecture against this
+stack. 4 CONFIRMED, 7 PROBABLE, 1 ABSENT (R2, voice — logged as gap G13).
+
 **Companion:** `nature-ai-evolution-lab/docs/SYSTEM_ENGINEERING_COLLABORATION.md`
 covers the model-evolution research programme in depth. This document covers the
 whole estate and how to work in it.
