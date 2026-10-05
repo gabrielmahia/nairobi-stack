@@ -1,0 +1,40 @@
+name: Agent instructions audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 7 * * 1"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit portfolio agent surfaces
+        env:
+          GITHUB_TOKEN: ${{ secrets.PORTFOLIO_REPO_TOKEN }}
+        run: |
+          python scripts/audit_agent_instructions.py \
+            --owner gabrielmahia \
+            --output /tmp/agent-instructions-report.md
+
+      - name: Publish report to workflow summary
+        run: cat /tmp/agent-instructions-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Maintain one tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="AI agent instruction compliance"
+          BODY="$(cat /tmp/agent-instructions-report.md)"
+          NUMBER="$(gh issue list --state open --search \"$TITLE in:title\" --json number,title --jq '.[] | select(.title == \"AI agent instruction compliance\") | .number' | head -1)"
+          if [ -n "$NUMBER" ]; then
+            gh issue edit "$NUMBER" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi
