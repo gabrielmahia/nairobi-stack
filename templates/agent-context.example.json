@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "repository": "owner/repository",
+  "project": "Project name",
+  "stable_branch": "main",
+  "integration_branch": "main",
+  "purpose": "One sentence",
+  "cold_start": [
+    "AGENTS.md",
+    "README.md"
+  ],
+  "commands": {
+    "test": "...",
+    "lint": "..."
+  },
+  "coordination": {
+    "task_registry": "GitHub Issues",
+    "work_claim": "Draft PR",
+    "branch_pattern": "agent/<agent-name>/<issue-number>-<slug>",
+    "pr_title_pattern": "[CLAIM #<issue>] <agent-name>: <scope>",
+    "authority": "Tests and external reality, not model consensus"
+  },
+  "current_workstreams": [],
+  "prohibited_autonomous_actions": [
+    "change licensing",
+    "expose credentials"
+  ]
+}
