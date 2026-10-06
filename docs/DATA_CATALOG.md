@@ -3,7 +3,7 @@
 Machine-derived map linking each open dataset to the MCP server it backs and the
 evaluation suite that measures agents using it. Source of truth: `catalog.json`.
 
-**16 datasets · 16 on Kaggle · 10 wired to a server · eval via [kipimo](https://huggingface.co/spaces/gmahia/kipimo-leaderboard)**
+**17 datasets on Hugging Face · 18 on Kaggle (counted 2026-10-06; Kaggle carries a second copy of the civic set) · 10 wired to a server · eval via [kipimo](https://huggingface.co/spaces/gmahia/kipimo-leaderboard)**
 
 | Dataset | HuggingFace | Kaggle | Backs server |
 |---|---|---|---|
