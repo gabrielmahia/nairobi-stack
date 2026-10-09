@@ -156,3 +156,22 @@ A repo satisfies v1 when an unfamiliar agent can answer, without prior chat:
 - What may I safely claim?
 - How do I test my work?
 - How do I hand it off?
+
+
+## Coverage-Adaptive Reasoning v2
+
+Every active repository should inherit the portfolio reasoning standard:
+
+`docs/COVERAGE_ADAPTIVE_REASONING.md`
+
+Repos should carry the marker:
+
+```
+<!-- coverage-adaptive-reasoning:v2 -->
+```
+
+in `AGENTS.md`.
+
+The purpose is not to force exhaustive research into every task. It is to ensure that consequential search distinguishes candidate generation from ranking, uses materiality-gated orthogonal retrieval, carries answer-confidence separately from coverage-confidence, and repairs systemic misses at the retrieval architecture level rather than appending omitted examples.
+
+The portfolio audit should treat a missing marker as policy drift, even when `AGENTS.md` itself exists.
