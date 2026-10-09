@@ -24,5 +24,9 @@
   "prohibited_autonomous_actions": [
     "change licensing",
     "expose credentials"
-  ]
+  ],
+  "reasoning_standard": {
+    "id": "coverage-adaptive-reasoning:v2",
+    "canonical": "https://github.com/gabrielmahia/nairobi-stack/blob/main/docs/COVERAGE_ADAPTIVE_REASONING.md"
+  }
 }
