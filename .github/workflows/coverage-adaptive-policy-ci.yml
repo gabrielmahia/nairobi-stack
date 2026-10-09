@@ -1,0 +1,33 @@
+name: Coverage-adaptive policy CI
+
+on:
+  pull_request:
+    paths:
+      - 'docs/COVERAGE_ADAPTIVE_REASONING.md'
+      - 'docs/AI_AGENT_COORDINATION_STANDARD.md'
+      - 'templates/AGENTS.multi-agent.md'
+      - 'scripts/audit_agent_instructions.py'
+      - '.github/workflows/coverage-adaptive-policy-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/COVERAGE_ADAPTIVE_REASONING.md'
+      - 'docs/AI_AGENT_COORDINATION_STANDARD.md'
+      - 'templates/AGENTS.multi-agent.md'
+      - 'scripts/audit_agent_instructions.py'
+      - '.github/workflows/coverage-adaptive-policy-ci.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Syntax check
+        run: python -m py_compile scripts/audit_agent_instructions.py
+      - name: Verify canonical marker
+        run: |
+          grep -q 'coverage-adaptive-reasoning:v2' docs/COVERAGE_ADAPTIVE_REASONING.md
+          grep -q 'coverage-adaptive-reasoning:v2' templates/AGENTS.multi-agent.md
