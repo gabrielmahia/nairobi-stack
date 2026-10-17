@@ -6,7 +6,7 @@
 
 ## Entry points
 - [reli-cli on PyPI](https://pypi.org/project/reli-cli/): installer and on-ramp — `pip install reli-cli && reli list`
-- [MCP Registry namespace](https://registry.modelcontextprotocol.io): 33 servers under `io.github.gabrielmahia`
+- [MCP Registry namespace](https://registry.modelcontextprotocol.io): the servers under `io.github.gabrielmahia`
 - [africa-coord-bus](https://pypi.org/project/africa-coord-bus/): coordination event bus, Kenya routing table, offline-first JSONL queue
 
 ## Evaluation
