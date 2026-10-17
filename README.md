@@ -1,7 +1,7 @@
 # nairobi-stack
 
 > *The largest open-source MCP coordination infrastructure for the Global South.*  
-> *31 servers. Local-first. Data-sovereign. MIT licensed.*
+> *Local-first. Data-sovereign. MIT licensed.*
 
 **The engineering guide for building software products in East Africa — and everywhere institutions are under-resourced.**
 
@@ -72,7 +72,7 @@ The SII Stack is open-source. The architecture is documented.
 What's needed is someone who wants to run the train.
 
 → [SII Stack](https://github.com/gabrielmahia/sii-stack) ·
-[Browse all 31 servers](https://glama.ai/mcp/servers?query=author%3Agabrielmahia) ·
+[Browse all servers](https://glama.ai/mcp/servers?query=author%3Agabrielmahia) ·
 [PyPI](https://pypi.org/user/gmahia)
 
 
@@ -121,10 +121,10 @@ TCP/IP didn't control the internet — it enabled it.
 Railroads didn't control freight — they enabled an economy.
 M-Pesa didn't control money — it enabled transactions at scale.
 
-The 31 MCP servers in this stack are rails.
+The MCP servers in this stack are rails.
 
 They give AI agents structured, authenticated, locally-processed access to:
-the M-PESA API, Kenya's 47-county government layer, NDMA drought data,
+the M-PESA API, Kenya's 47-county government layer, a drought-phase data model (simulated until a data source is integrated),
 land title systems, health infrastructure, education records, and civic institutions.
 
 Any developer — anywhere — can `pip install mpesa-mcp` and give an AI agent
@@ -172,7 +172,7 @@ Replace the data layer with Uganda's NSSF records, Nigeria's CAC registry,
 Ghana's GhIPSS payment rails, or Tanzania's BRELA business registration —
 and the same architecture works without changing a line of application code.
 
-### Current depth: Kenya (31 servers)
+### Current depth: Kenya
 Kenya is the starting point because it has the most developed data infrastructure
 for this kind of tooling: M-Pesa, a mature Daraja API, NDMA drought data,
 a 47-county government layer with structured data, and an active tech ecosystem.
@@ -330,16 +330,16 @@ If you're building on MCP for African markets, this is the venue to present.
 | [Open Data Day](https://github.com/okfn/opendataday/issues/425) | #425 | Kenya civic tools showcase |
 | [Africa's Talking SDK](https://github.com/AfricasTalkingLtd/africastalking-python/issues/72) | #72 | mpesa-mcp community project |
 
-<!-- interconnect:v1 -->
+<!-- interconnect:v2 -->
 ## Part of the East Africa coordination stack
 
-- **Install & run:** `pip install reli-cli && reli list` — 33 MCP servers on the [official MCP Registry](https://registry.modelcontextprotocol.io) under `io.github.gabrielmahia`
+- **Install & run:** `pip install reli-cli && reli list` — the MCP servers on the [official MCP Registry](https://registry.modelcontextprotocol.io) under `io.github.gabrielmahia`
 - **Evaluate any model on Swahili agent tasks:** [kipimo](https://github.com/gabrielmahia/kipimo) · [dataset](https://huggingface.co/datasets/gmahia/kipimo) · [leaderboard](https://huggingface.co/spaces/gmahia/kipimo-leaderboard)
 - **Coordinate across servers:** [africa-coord-bus](https://pypi.org/project/africa-coord-bus/) — offline-first event bus with a built-in Kenya routing table
 - **Datasets:** [huggingface.co/gmahia](https://huggingface.co/gmahia) · **Docs hub:** [nairobi-stack](https://github.com/gabrielmahia/nairobi-stack)
 
 Model-agnostic by design: closed APIs, open-weight models, and small distilled models are all first-class citizens.
-<!-- /interconnect:v1 -->
+<!-- /interconnect:v2 -->
 
 ## Start here (engineers and AI systems)
 
