@@ -26,7 +26,7 @@ standards, failure classes, and rules for collaborating agents.
 | GitHub public repos | 155 |
 | GitHub stars / forks | 26 / 14 (across 153 non-fork repos) |
 | GitHub followers | 10 |
-| HuggingFace datasets | 17 |
+| HuggingFace datasets | 15 |
 | HuggingFace models | 1 |
 | HuggingFace Spaces | 2 |
 | HuggingFace dl/30d · likes | 567 · **1** |
@@ -101,15 +101,15 @@ verify live. Weekly audit catches drift between `main` and PyPI.
 
 ## 3. HuggingFace — `gmahia`
 
-**17 datasets · 1 model · 2 Spaces** — 559 downloads/30d, **1 like**
+**15 datasets · 1 model · 2 Spaces** — 559 downloads/30d, **1 like**
 
 Datasets are public-domain sourced, CC-BY, all carrying license, task-category
 and language tags. Spaces: `kipimo-leaderboard` (static, client-side scoring —
 HF now requires PRO for Gradio) and `Art-and-Craft`.
 
-## 4. Kaggle — `gabrielmahia`
+## 4. Kaggle — `gmahia`
 
-**17 datasets** mirroring HuggingFace, CC-BY-4.0, plus a starter notebook
+**16 datasets** mirroring Hugging Face with the same licence as each Hugging Face card (CC0-1.0, CC BY 4.0 or CC BY-SA 4.0; see `data/platform/licences.json` in nature-ai-evolution-lab), plus research notebooks
 (`east-africa-agriculture-quick-start`).
 
 **Correction to earlier belief:** dataset cover images **are** settable via API —
@@ -148,8 +148,7 @@ Script Properties, never git.
 ## 9. Product Hunt / DPGA
 
 - **Product Hunt:** `mpesa-mcp` launched.
-- **DPGA:** `mpesa-mcp` (GID0093741) and `swahili-civic-nlp` (GID0093743) under
-  review; **`wapimaji-mcp` (GID0093744) INCOMPLETE** — portal-only, still open.
+- **DPGA:** `mpesa-mcp` (GID0093741) under review. `swahili-civic-nlp` (GID0093743) described a dataset that never existed (its Hugging Face and Kaggle copies held only a README and were deleted on 2026-10-17): the submission should be withdrawn. **`wapimaji-mcp` (GID0093744) INCOMPLETE** — portal-only, still open; its drought data is simulated, so it should not be completed as a digital public good until real data is integrated.
 
 ## 10. Compute (see `nature-ai-evolution-lab`)
 
