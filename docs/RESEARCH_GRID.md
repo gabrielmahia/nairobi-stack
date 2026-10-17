@@ -33,7 +33,7 @@ Durable architecture or model hype?
 | # | Source entity | Artifact | Target | Status |
 |---|---|---|---|---|
 | R1 | OpenSSF (ch. 3) | Scorecard baseline + remediation (branch protection, dependabot, least-privilege workflow tokens) | 9 core repos | **EXECUTED 2026-07-17** — coord-bus baseline 3.7/10; wave script at interconnect/security_wave.py; remaining 32 servers queued |
-| R2 | BAAI (ch. 1) | BGE-M3 multilingual embeddings (Swahili-capable, open) | swahili-civic-nlp / any RAG server | Adopt as default embedding recommendation; benchmark against kipimo term-grounding tasks |
+| R2 | BAAI (ch. 1) | BGE-M3 multilingual embeddings (Swahili-capable, open) | any Swahili-capable RAG server | Adopt as default embedding recommendation; benchmark against kipimo term-grounding tasks |
 | R3 | Shanghai AI Lab (ch. 1) | OpenCompass eval framework | kipimo | Ship an OpenCompass-format exporter (`kipimo tasks --format opencompass`) so the Swahili benchmark enters the Chinese eval ecosystem — distribution into the open-weight world's own instrument |
 | R4 | Copernicus / Digital Earth Africa (ch. 5) | Free analysis-ready EO data for Africa | wapimaji-mcp, mazingira-mcp, kilimo-mcp | Document as primary data source; replaces ad-hoc satellite sourcing |
 | R5 | DHIS2 (ch. 4) | Kenya's actual national health information system, open API | kenya-health-mcp, afya-mcp | Interop pattern doc: agents ground on the registry government already runs — genchi genbutsu applied |
