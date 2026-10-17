@@ -16,12 +16,6 @@
       "backs_server": "county-mcp"
     },
     {
-      "name": "swahili-civic-nlp",
-      "huggingface": "https://huggingface.co/datasets/gmahia/swahili-civic-nlp",
-      "kaggle": "https://www.kaggle.com/datasets/gmahia/swahili-civic-nlp",
-      "backs_server": "tafsiri-mcp"
-    },
-    {
       "name": "kenya-agricultural-qa",
       "huggingface": "https://huggingface.co/datasets/gmahia/kenya-agricultural-qa",
       "kaggle": "https://www.kaggle.com/datasets/gmahia/kenya-agricultural-qa",
@@ -32,12 +26,6 @@
       "huggingface": "https://huggingface.co/datasets/gmahia/kenya-legal-nlp",
       "kaggle": "https://www.kaggle.com/datasets/gmahia/kenya-legal-nlp",
       "backs_server": "fomu-mcp"
-    },
-    {
-      "name": "kenya-mcp-data",
-      "huggingface": "https://huggingface.co/datasets/gmahia/kenya-mcp-data",
-      "kaggle": "https://www.kaggle.com/datasets/gmahia/kenya-mcp-data",
-      "backs_server": "reli-cli"
     },
     {
       "name": "military-strategy-classics",
