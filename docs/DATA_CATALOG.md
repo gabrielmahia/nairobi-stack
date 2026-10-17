@@ -3,15 +3,13 @@
 Machine-derived map linking each open dataset to the MCP server it backs and the
 evaluation suite that measures agents using it. Source of truth: `catalog.json`.
 
-**17 datasets on Hugging Face · 18 on Kaggle (counted 2026-10-06; Kaggle carries a second copy of the civic set) · 10 wired to a server · eval via [kipimo](https://huggingface.co/spaces/gmahia/kipimo-leaderboard)**
+**15 datasets on Hugging Face · 16 on Kaggle (counted 2026-10-17; Kaggle carries a second copy of the civic set) · 8 wired to a server · eval via [kipimo](https://huggingface.co/spaces/gmahia/kipimo-leaderboard)**
 
 | Dataset | HuggingFace | Kaggle | Backs server |
 |---|---|---|---|
 | kenya-civic-data | [HF](https://huggingface.co/datasets/gmahia/kenya-civic-data) | [Kaggle](https://www.kaggle.com/datasets/gmahia/kenya-civic-data) | `county-mcp` |
-| swahili-civic-nlp | [HF](https://huggingface.co/datasets/gmahia/swahili-civic-nlp) | [Kaggle](https://www.kaggle.com/datasets/gmahia/swahili-civic-nlp) | `tafsiri-mcp` |
 | kenya-agricultural-qa | [HF](https://huggingface.co/datasets/gmahia/kenya-agricultural-qa) | [Kaggle](https://www.kaggle.com/datasets/gmahia/kenya-agricultural-qa) | `kilimo-mcp` |
 | kenya-legal-nlp | [HF](https://huggingface.co/datasets/gmahia/kenya-legal-nlp) | [Kaggle](https://www.kaggle.com/datasets/gmahia/kenya-legal-nlp) | `fomu-mcp` |
-| kenya-mcp-data | [HF](https://huggingface.co/datasets/gmahia/kenya-mcp-data) | [Kaggle](https://www.kaggle.com/datasets/gmahia/kenya-mcp-data) | `reli-cli` |
 | military-strategy-classics | [HF](https://huggingface.co/datasets/gmahia/military-strategy-classics) | [Kaggle](https://www.kaggle.com/datasets/gmahia/military-strategy-classics) | — |
 | philosophy-classics-structured | [HF](https://huggingface.co/datasets/gmahia/philosophy-classics-structured) | [Kaggle](https://www.kaggle.com/datasets/gmahia/philosophy-classics-structured) | — |
 | african-kingdoms-history | [HF](https://huggingface.co/datasets/gmahia/african-kingdoms-history) | [Kaggle](https://www.kaggle.com/datasets/gmahia/african-kingdoms-history) | — |
