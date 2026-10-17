@@ -191,7 +191,7 @@ Each is a separate data layer on the same rail architecture.
 
 ### What "Africa-wide" actually means
 Swahili covers East Africa and large parts of Central Africa (including DRC, Rwanda, Burundi).
-`tafsiri-mcp` and `swahili-civic-nlp` are already cross-border tools.
+`tafsiri-mcp` covers a language that crosses borders, though its reference sets are Kenyan.
 `sifa-mcp` (portable reputation) and `soko-mcp` (market prices) have no inherent
 Kenya boundary — the schema works for any East African market.
 
