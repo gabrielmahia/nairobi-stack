@@ -52,7 +52,7 @@ are not adoption — see §8.
 ```
    signals in                 routing                    surfaces out
 ┌──────────────┐      ┌──────────────────┐      ┌──────────────────────┐
-│ coord-ingest │─────▶│ africa-coord-bus │─────▶│ ~34 MCP servers      │
+│ coord-ingest │─────▶│ africa-coord-bus │─────▶│ 33 MCP servers       │
 │ HDX · GDACS  │      │ routing tables   │      │ mpesa · wapimaji ... │
 │ Open-Meteo   │      │ cascades         │      └──────────────────────┘
 │ USGS · Kobo  │      │ offline queue    │      ┌──────────────────────┐
@@ -77,21 +77,21 @@ incumbent's schema and you do not need permission to be useful.
 
 | Repo | PyPI | Role |
 |---|---|---|
-| `africa-coord-bus` | **0.4.0** | Event bus. Kenya + Tanzania routing, cross-border cascades, offline-first CRDT queue, CAP/HXL/IPC export, declared provenance |
+| `africa-coord-bus` | **0.4.1** | Event bus. Kenya + Tanzania routing, cross-border cascades, offline-first CRDT queue, CAP/HXL/IPC export, declared provenance |
 | `coord-ingest` | **0.4.0** | Feed adapters → typed events: Open-Meteo, USGS, GDACS, HDX/OCHA, Kobo/ODK, Google Flood Hub |
 | `kipimo` | **0.4.0** | Swahili agent-task benchmark; parallel harness; deployment-Pareto selector |
-| `mpesa-mcp` | **0.2.7** | M-Pesa/Daraja + Africa's Talking. 23 tools. The most externally engaged repo |
-| `wapimaji-mcp` | **0.1.8** | NDMA drought phases, 47 counties. DPGA submission pending |
+| `mpesa-mcp` | **0.5.0** | M-Pesa/Daraja + Africa's Talking. 24 tools; since 0.5.0 the person, not the model, confirms each payment. The most externally engaged repo |
+| `wapimaji-mcp` | **0.1.16** | NDMA drought phases, 47 counties. DPGA submission pending |
 | `reli-cli` | 0.1.1 | On-ramp: `reli up · list · doctor · demo drought` |
-| `decision-intelligence-mcp` | 0.1.2 | Strategy/philosophy corpus as tools |
+| `decision-intelligence-mcp` | 0.1.7 | Strategy/philosophy corpus as tools |
 | `classical-strategy-mcp` | 0.1.1 | **Tombstone.** Renamed; import raises and redirects |
 | `nairobi-stack` | — | This hub: gap register, doctrine, catalog, automations |
 | `leapfrog-rd-foundry` | *private* | Global public-R&D → mechanism → recombination pipeline |
 | `nature-ai-evolution-lab` | *private* | Small-model capability evolution, evaluated by kipimo |
 | `AfriKaziOS` | — | Institutional architecture across 7 domains |
 
-~34 MCP servers on the registry, 32 on Glama, 156 GitHub repos, 17 HuggingFace
-datasets.
+33 MCP servers on the registry and on Glama (counted 2026-10-27 and 2026-10-21); 15 HuggingFace
+datasets. Repository, star and version figures are in [`PLATFORM_INVENTORY.md`](PLATFORM_INVENTORY.md), refreshed weekly.
 
 ## 5. Engineering standards
 
@@ -144,7 +144,7 @@ technical review on its first run.
 
 ## 8. Honest adoption state
 
-156 repos · **25 stars · 14 forks** · 1 HuggingFace like · 24 Dev.to reactions.
+150 public repos · **27 stars · 16 forks** · 1 HuggingFace like · 26 Dev.to reactions across 45 articles (measured 2026-10-27).
 
 PyPI download counts (~1,300–4,400/month) are **mirror and crawler traffic, not
 adoption**. The tell: `coord-ingest` recorded 331 downloads in its first week
@@ -202,6 +202,6 @@ Not architecture. **Measurement, then reach.**
    Needs a machine that can load Qwen3-0.6B.
 2. kipimo has never been run against live endpoints. Two targets — one API, one
    local small-open model — produce the first honest Swahili scorecard. That is
-   evidence an institution responds to; 156 repos are not.
+   evidence an institution responds to; 150 repos are not.
 3. The frontier gaps (G2 data sovereignty, G3 measured pilot) need an
    institutional counterpart, not more code.

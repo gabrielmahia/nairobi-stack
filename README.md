@@ -95,7 +95,7 @@ This guide is built from real integration work across three production systems �
 - [SMS Infrastructure](guides/sms-infrastructure.md) — Africa's Talking, shortcodes, DLT registration
 
 ### Data & Live APIs
-- [Live Data APIs](guides/live-data-apis.md) — 11 free keyless APIs confirmed working in Kenya: Open-Meteo, NDMA, COB, World Bank, WFP/HDX, LSK/FIDA/Judiciary RSS, open.er-api.com, Yahoo Finance
+- [Live Data APIs](guides/live-data-apis.md) — 11 free keyless APIs for Kenya (re-checked 2026-10-27: the NDMA feed was down; Yahoo Finance was not re-checked; the rest answered): Open-Meteo, NDMA, COB, World Bank, WFP/HDX, LSK/FIDA/Judiciary RSS, open.er-api.com, Yahoo Finance
 
 ### Design
 - [Mobile-First UX for Kenya](guides/mobile-first-ux.md) — offline, low-data, feature phone realities
@@ -196,17 +196,23 @@ Swahili covers East Africa and large parts of Central Africa (including DRC, Rwa
 Kenya boundary — the schema works for any East African market.
 
 ---
-## 📊 Portfolio Stats — June 2026
+## 📊 Portfolio stats
 
-| Platform | Status |
-|----------|--------|
-| PyPI packages | 31 live (v0.1.1 · v0.1.9 for mpesa-mcp) |
-| Glama directory | 31 indexed |
-| Smithery.ai | Indexed (3+ confirmed) |
-| awesome-mcp-servers | mpesa-mcp listed · PR #8363 open |
-| HuggingFace datasets | 5 datasets · 246 total downloads |
-| Dev.to articles | 15 published · 244+ views |
-| DPGA submissions | 2 under review · 1 pending completion |
+The figures that change (repositories, stars, PyPI versions, registry counts) are regenerated every Monday from live GitHub and PyPI APIs in [`docs/PLATFORM_INVENTORY.md`](docs/PLATFORM_INVENTORY.md). They are not repeated here because a number copied into prose goes stale: the table that used to be here said 31 PyPI packages and `mpesa-mcp` v0.1.9.
+
+Measured, for orientation (dates differ by row):
+
+| Where | Measured |
+|---|---|
+| PyPI | 42 projects, 33 of them MCP servers (counted 2026-10-22) |
+| MCP Registry | 33 servers under `io.github.gabrielmahia` (2026-10-27) |
+| GitHub | 150 public repositories, 37 of them archived (2026-10-27) |
+| Hugging Face | 15 datasets and 2 Spaces (2026-10-27) |
+| Kaggle | 16 datasets (2026-10-27) |
+| Dev.to | 45 articles (2026-10-27) |
+| `mpesa-mcp` | 0.5.0, 24 tools (2026-10-27) |
+
+Not re-checked since June 2026, so not stated here: Smithery, awesome-mcp-servers and DPGA submission status, and article view counts.
 
 ## Contributing
 
@@ -241,9 +247,10 @@ Without these, Claude Desktop and ChatGPT treat all tools as potentially destruc
 
 Servers can advertise capabilities via `.well-known/mcp.json` — a static JSON file at the repo root that registries can index without connecting to your server. Add this to any MCP server you publish.
 
-### MCP accuracy benchmark
+### Testing write-capable MCP servers
 
-CData's 2026 benchmark found MCP servers accurate 60–75% on complex queries. Write operations (payments, SMS) are the highest-risk category — test for:
+A caution about a statistic that circulates. CData's whitepaper "The 25% Accuracy Gap" is an **internal vendor benchmark**: 378 prompts across CRM, project-management, data-warehouse and ERP platforms. It reports 98.5% for CData's own product and 59-75% for the other commercial approaches it tested, and says itself that it has no independent third-party verification ([whitepaper](https://www.cdata.com/lp/ai-accuracy-whitepaper/)). It says nothing about payment or SMS servers, so it is not evidence about the accuracy of MCP servers in general; an earlier version of this page presented it that way and was corrected on 2026-10-27. Its general warning, that write operations fail more often than reads, is reasonable, so for payment and SMS servers test at least:
+
 - All phone number formats: `0712345678`, `254712345678`, `+254712345678`
 - Boundary amounts (minimum 1 KES, maximum per API limit)
 - Missing optional fields (reference, description)
@@ -258,7 +265,7 @@ Key changes for East African app builders:
 
 ## AGENTS.md — tell AI coding agents how to work with your repo
 
-[AGENTS.md](https://github.com/aaif/agents.md) is a spec by OpenAI, now part of the
+[AGENTS.md](https://github.com/agentsmd/agents.md) is a spec by OpenAI, now part of the
 Agentic AI Foundation (Linux Foundation). It's been adopted by 60,000+ repos and is
 supported by Cursor, GitHub Copilot, Claude Code, Devin, Gemini CLI, and VS Code.
 
@@ -309,10 +316,13 @@ If you're building on MCP for African markets, this is the venue to present.
 
 | Platform | Link | What's there |
 |----------|------|--------------|
-| GitHub | [gabrielmahia](https://github.com/gabrielmahia) | 15 repos, 8+ packages |
+| GitHub | [gabrielmahia](https://github.com/gabrielmahia) | 150 public repositories (37 archived) |
 | PyPI | [mpesa-mcp](https://pypi.org/project/mpesa-mcp/) | MCP server for M-Pesa + AT |
-| MCP Registry | [io.github.gabrielmahia/mpesa-mcp](https://registry.modelcontextprotocol.io) | Official listing |
-| Portfolio | [gabrielmahia.github.io](https://gabrielmahia.github.io) | All 13 apps |
+| MCP Registry | [io.github.gabrielmahia/mpesa-mcp](https://registry.modelcontextprotocol.io) | Official listing; 33 servers in all |
+| PyPI (all) | [pypi.org/user/gmahia](https://pypi.org/user/gmahia/) | 42 projects, 33 of them MCP servers |
+| Hugging Face | [huggingface.co/gmahia](https://huggingface.co/gmahia) | 15 datasets, 2 Spaces |
+| Kaggle | [kaggle.com/gmahia](https://www.kaggle.com/gmahia) | 16 datasets |
+| Portfolio | [gabrielmahia.github.io](https://gabrielmahia.github.io) | Project index and apps |
 | Engineering blog | [aikungfu.dev](https://aikungfu.dev) | Technical writing |
 
 ### Open source contributions

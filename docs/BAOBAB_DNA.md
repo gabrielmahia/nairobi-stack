@@ -40,4 +40,4 @@ should take (MCP, connector, dataset, standard, benchmark, decision engine).
 redesign it.**
 
 *Companion documents: [EXECUTION_BLUEPRINT.md](EXECUTION_BLUEPRINT.md) (roadmaps,
-multiplier analysis) · the stack itself (35 servers, africa-coord-bus, reli).*
+multiplier analysis) · the stack itself (33 servers, africa-coord-bus, reli).*

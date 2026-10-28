@@ -39,8 +39,8 @@ standards, failure classes, and rules for collaborating agents.
 | `africa-coord-bus` | 0.4.1 |
 | `coord-ingest` | 0.4.0 |
 | `kipimo` | 0.4.0 |
-| `mpesa-mcp` | 0.4.5 |
-| `wapimaji-mcp` | 0.1.15 |
+| `mpesa-mcp` | 0.5.0 |
+| `wapimaji-mcp` | 0.1.16 |
 | `civic-agent-kit` | 0.2.4 |
 | `jumuia-mcp` | 0.1.11 |
 | `familia-mcp` | 0.1.11 |
@@ -63,12 +63,12 @@ card that drifts from the repo that generates it.
 
 ## 1. GitHub — `gabrielmahia`
 
-**156 public repos · 8 private · 25 stars · 14 forks · 9 followers**
+**Figures are in the live table above** (refreshed weekly); they are not repeated here.
 
 **Coordination stack (public, MIT):** `africa-coord-bus`, `coord-ingest`,
-`kipimo`, `reli` (CLI), `nairobi-stack` (this hub), plus ~34 MCP servers.
+`kipimo`, `reli` (CLI), `nairobi-stack` (this hub), plus 33 MCP servers.
 
-**Private (8):**
+**Private (a partial list; there are more):**
 
 | Repo | What it is |
 |---|---|
@@ -87,13 +87,13 @@ card that drifts from the repo that generates it.
 
 | Package | Version | Package | Version |
 |---|---|---|---|
-| `africa-coord-bus` | **0.4.0** | `jumuia-mcp` | 0.1.6 |
-| `coord-ingest` | **0.4.0** | `familia-mcp` | 0.1.5 |
-| `kipimo` | **0.4.0** | `ardhi-mcp` | 0.1.4 |
-| `mpesa-mcp` | **0.2.7** | `mazingira-mcp` | 0.1.4 |
-| `wapimaji-mcp` | **0.1.8** | `tafsiri-mcp` | 0.1.4 |
-| `civic-agent-kit` | 0.2.2 | `offline-mcp` | 0.1.4 |
-| `reli-cli` | 0.1.1 | `decision-intelligence-mcp` | 0.1.2 |
+| `africa-coord-bus` | **0.4.1** | `jumuia-mcp` | 0.1.11 |
+| `coord-ingest` | **0.4.0** | `familia-mcp` | 0.1.11 |
+| `kipimo` | **0.4.0** | `ardhi-mcp` | 0.1.8 |
+| `mpesa-mcp` | **0.5.0** | `mazingira-mcp` | 0.1.9 |
+| `wapimaji-mcp` | **0.1.16** | `tafsiri-mcp` | 0.1.9 |
+| `civic-agent-kit` | 0.2.4 | `offline-mcp` | 0.1.10 |
+| `reli-cli` | 0.1.1 | `decision-intelligence-mcp` | 0.1.7 |
 | `classical-strategy-mcp` | 0.1.1 | **tombstone** — import raises, redirects |
 
 **Release discipline:** bump → build → cold-install in a clean venv → publish →
@@ -118,10 +118,9 @@ as UI-only. Covers are still missing; they need a design pass, not a batch job.
 
 ## 5. MCP ecosystem
 
-- **Glama:** 32 servers. Grades visible per server. Nine C-grade READMEs upgraded
+- **Glama:** 33 servers (grades 13 A, 11 B, 9 C when last read, 2026-10-21). Grades visible per server. Nine C-grade READMEs upgraded
   2026-09 (install, tools list, usage, integration, provenance) — awaiting recrawl.
-- **MCP Registry:** ~34 servers under `io.github.gabrielmahia`. The public search
-  API returned nothing on this run — treat the count as unverified today.
+- **MCP Registry:** 33 servers under `io.github.gabrielmahia`, counted through the public search API on 2026-10-27.
 
 **Grade driver, measured:** A vs C on Glama tracked entirely to README content, not
 structure. C-grade repos had identical tests, CI and tool counts — they just had no

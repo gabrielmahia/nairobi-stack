@@ -73,6 +73,8 @@ def fetch_county_weather(lat: float, lon: float, county: str):
 
 ## NDMA drought alerts — ndma.go.ke RSS
 
+> **Status 2026-10-27: `https://www.ndma.go.ke/feed/` answered HTTP 503** on two attempts; it worked when this guide was written. Recheck before relying on it.
+
 **URL:** `https://www.ndma.go.ke/feed/`  
 **Key required:** No  
 **Update frequency:** When NDMA publishes (typically weekly during drought periods)  
@@ -281,6 +283,8 @@ else:
 ---
 
 ## Safaricom Daraja reachability — sandbox.safaricom.co.ke
+
+> **Note 2026-10-27:** the bare host answers 404 because it is not an endpoint. A request to `/oauth/v1/generate` without credentials answers 400, which is how to tell the sandbox is reachable.
 
 **URL:** `https://sandbox.safaricom.co.ke`  
 **Key required:** No (ping only)  
