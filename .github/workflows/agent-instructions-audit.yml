@@ -32,7 +32,8 @@ jobs:
         run: |
           TITLE="AI agent instruction compliance"
           BODY="$(cat /tmp/agent-instructions-report.md)"
-          NUMBER="$(gh issue list --state open --search \"$TITLE in:title\" --json number,title --jq '.[] | select(.title == \"AI agent instruction compliance\") | .number' | head -1)"
+          # The search index lags behind new issues, so listing open issues directly is what keeps this to ONE issue; the oldest exact match wins.
+          NUMBER="$(gh issue list --state open --limit 200 --json number,title --jq '[.[] | select(.title == "AI agent instruction compliance") | .number] | min // empty')"
           if [ -n "$NUMBER" ]; then
             gh issue edit "$NUMBER" --body "$BODY"
           else
