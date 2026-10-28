@@ -44,7 +44,7 @@ UNKNOWN.
 | L2 Sensory / connector fabric | **`coord-ingest`** — Open-Meteo, USGS, GDACS, HDX/OCHA, Kobo/ODK, Flood Hub | CONFIRMED |
 | L3 Personal / local world model | Routing tables, county data, `SubnationalLocation` | PROBABLE — *local*, not *personal* |
 | L4 Regulatory / attention | **`africa-coord-bus`** — routing, cascades, severity, alert levels | CONFIRMED |
-| L5 Differentiated specialists | ~34 MCP servers | CONFIRMED |
+| L5 Differentiated specialists | 33 MCP servers | CONFIRMED |
 | L6 Planning & action | `mpesa-mcp` (only actuator) | PARTIAL |
 | L7 Homeostatic capability monitor | — | **ABSENT** |
 | L8 Learning & consolidation | `nature-ai-evolution-lab` immune memory + promotion gate | PROBABLE |
