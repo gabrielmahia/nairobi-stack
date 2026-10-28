@@ -54,26 +54,29 @@ def request_json(url: str, token: str | None) -> Any:
 
 
 def list_repos(owner: str, token: str | None) -> list[dict[str, Any]]:
+    """List the owner's repositories. With a personal access token the authenticated /user/repos endpoint also sees private repositories; the automatic token an Actions run
+    receives is refused there (HTTP 401 or 403), so the listing falls back to the public /users/{owner}/repos, which works with any token and without one."""
     repos: list[dict[str, Any]] = []
     page = 1
+    use_user_endpoint = bool(token)
     while True:
-        if token:
+        public_url = (
+            f"https://api.github.com/users/{urllib.parse.quote(owner)}/repos?"
+            + urllib.parse.urlencode({"per_page": 100, "page": page, "sort": "full_name"})
+        )
+        batch = None
+        if use_user_endpoint:
             url = "https://api.github.com/user/repos?" + urllib.parse.urlencode(
-                {
-                    "per_page": 100,
-                    "page": page,
-                    "affiliation": "owner",
-                    "sort": "full_name",
-                }
+                {"per_page": 100, "page": page, "affiliation": "owner", "sort": "full_name"}
             )
-        else:
-            url = (
-                f"https://api.github.com/users/{urllib.parse.quote(owner)}/repos?"
-                + urllib.parse.urlencode(
-                    {"per_page": 100, "page": page, "sort": "full_name"}
-                )
-            )
-        batch = request_json(url, token)
+            try:
+                batch = request_json(url, token)
+            except urllib.error.HTTPError as exc:
+                if exc.code not in (401, 403):
+                    raise
+                use_user_endpoint = False   # not a personal token: use the public listing from here on
+        if batch is None:
+            batch = request_json(public_url, token)
         if not batch:
             break
         repos.extend(
