@@ -322,6 +322,8 @@ If you're building on MCP for African markets, this is the venue to present.
 | PyPI (all) | [pypi.org/user/gmahia](https://pypi.org/user/gmahia/) | 42 projects, 33 of them MCP servers |
 | Hugging Face | [huggingface.co/gmahia](https://huggingface.co/gmahia) | 15 datasets, 2 Spaces |
 | Kaggle | [kaggle.com/gmahia](https://www.kaggle.com/gmahia) | 16 datasets |
+| Dev.to | [@gabrielmahia](https://dev.to/gabrielmahia) | 45 articles |
+| Glama | [30+ servers](https://glama.ai/mcp/servers?query=author%3Agabrielmahia) | Directory listing |
 | Portfolio | [gabrielmahia.github.io](https://gabrielmahia.github.io) | Project index and apps |
 | Engineering blog | [aikungfu.dev](https://aikungfu.dev) | Technical writing |
 
