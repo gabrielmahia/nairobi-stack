@@ -17,7 +17,7 @@ jobs:
 
       - name: Audit portfolio agent surfaces
         env:
-          GITHUB_TOKEN: ${{ secrets.PORTFOLIO_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PORTFOLIO_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           python scripts/audit_agent_instructions.py \
             --owner gabrielmahia \
