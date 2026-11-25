@@ -51,7 +51,7 @@ All UI is designed mobile-first. Any new elements must:
 
 ## License
 
-Apache 2.0 (civic tools) or CC-BY-NC-ND-4.0 (see LICENSE file).  
+MIT (see LICENSE).  
 Contact: contact@aikungfu.dev
 
 <!-- coverage-adaptive-reasoning:v2 -->
