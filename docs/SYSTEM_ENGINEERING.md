@@ -115,7 +115,7 @@ system starts measuring its own assumptions.
 reference data; the response names the verifying authority (sasra.or.ke,
 nema.go.ke, epra.go.ke, cob.go.ke).
 
-**Licensing:** MIT for infrastructure, CC-BY-NC-ND for end-user apps, CC-BY for
+**Licensing:** MIT for infrastructure and reference apps, PolyForm Noncommercial 1.0.0 for flagship end-user products (see [LICENSING_POLICY.md](LICENSING_POLICY.md)), CC-BY for
 data. **No agent changes licensing autonomously, ever.**
 
 ## 6. Automation that runs without anyone

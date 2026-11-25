@@ -22,4 +22,4 @@
 - [Project doctrine](https://github.com/gabrielmahia/nairobi-stack/blob/main/docs/BAOBAB_DNA.md): engineering principles, 10-year maintenance horizon
 
 ## Optional
-- [Reference apps](https://github.com/gabrielmahia): Streamlit demonstrations (DEMO-labeled, CC BY-NC-ND)
+- [Reference apps](https://github.com/gabrielmahia): Streamlit demonstrations (DEMO-labeled; MIT, flagship products PolyForm Noncommercial — see docs/LICENSING_POLICY.md)
